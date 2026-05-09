@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ain Al Khaleej University of Health Sciences</title>
+<meta name="description" content="Ain Al Khaleej University of Health Sciences — Redefining the Future of Health Sciences in Al Ain, UAE."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+<style>
+/* ═══════════════════════════════════════════════════
+   AKU — LIGHT WHITE DESIGN SYSTEM
+   Exact same structure as the dark version, inverted palette
+═══════════════════════════════════════════════════ */
+:root {
+  /* Surface palette */
+  --bg:        #ffffff;
+  --bg-2:      #f7f8fc;
+  --bg-3:      #eef1f8;
+  --bg-4:      #e4e8f2;
+  /* Navy for text / accents (stays dark) */
+  --navy:      #0a1628;
+  --navy-2:    #0d1f3c;
+  --navy-3:    #122040;
+  --navy-4:    #1a2f52;
+  /* Gold */
+  --gold:      #b8892f;
+  --gold-2:    #d4a84a;
+  --gold-pale: #fdf3dc;
+  /* Ink palette — replaces white vars */
+  --ink:       #0a1628;
+  --ink-70:    rgba(10,22,40,.70);
+  --ink-50:    rgba(10,22,40,.50);
+  --ink-30:    rgba(10,22,40,.30);
+  --ink-15:    rgba(10,22,40,.15);
+  --ink-08:    rgba(10,22,40,.08);
+  --ink-04:    rgba(10,22,40,.04);
+  /* Gold transparencies */
+  --gold-a30:  rgba(184,137,47,.30);
+  --gold-a15:  rgba(184,137,47,.15);
+  /* Typography */
+  --display:   'Cormorant Garamond', Georgia, serif;
+  --body:      'DM Sans', system-ui, sans-serif;
+  --nav-h:     82px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 8px)}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+button{font-family:var(--body);cursor:pointer;border:none;background:none}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-2)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(28px);transition:.75s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ─── SECTION WRAPPER ─── */
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)}
+
+/* ─── GOLD LABEL ─── */
+.gold-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);
+}
+.gold-label::before{content:"";width:18px;height:1px;background:var(--gold)}
+
+/* ─── BUTTONS ─── */
+.btn-gold{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.75rem 1.75rem;border-radius:2rem;border:none;
+  background:var(--gold);color:#ffffff;
+  font-family:var(--body);font-size:.875rem;font-weight:700;
+  transition:background .25s,transform .25s,box-shadow .25s;cursor:pointer;
+}
+.btn-gold:hover{background:var(--gold-2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,47,.30)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:.75rem 1.75rem;border-radius:2rem;
+  border:1px solid var(--ink-30);color:var(--ink-70);
+  font-size:.875rem;font-weight:500;
+  transition:border-color .25s,color .25s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════
+   NAVIGATION — white, clean, professional
+═══════════════════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;z-index:1000;width:100%;
+  height:var(--nav-h);
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--ink-08);
+  box-shadow:0 1px 0 var(--ink-08), 0 4px 24px rgba(10,22,40,.06);
+  display:flex;align-items:center;
+  overflow:visible;
+}
+.nav__inner{
+  width:100%;display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;
+  padding:0 clamp(20px,3.5vw,56px);
+}
+
+/* Logo */
+.nav__logo{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.nav__logo img{height:54px;width:auto;object-fit:contain}
+.nav__logo-text{display:flex;flex-direction:column}
+.nav__logo-ar{font-size:.52rem;color:var(--gold);letter-spacing:.04em;line-height:1.3}
+.nav__logo-en{font-size:.52rem;font-weight:600;color:var(--ink);letter-spacing:.1em;line-height:1.3;text-transform:uppercase}
+
+/* Desktop links */
+.nav__links{
+  display:flex;align-items:center;height:100%;
+  gap:2px;flex:1;justify-content:center;overflow:visible;
+}
+.nav__trigger{
+  position:relative;display:inline-flex;align-items:center;gap:5px;
+  height:var(--nav-h);padding:0 clamp(10px,.9vw,18px);
+  color:var(--ink-70);font-size:clamp(12.5px,.9vw,14px);font-weight:600;
+  background:none;border:none;cursor:pointer;white-space:nowrap;
+  transition:color .2s;overflow:visible;
+}
+.nav__trigger svg{width:10px;height:6px;opacity:.5;transition:transform .25s,opacity .2s;flex-shrink:0}
+.nav__trigger:hover,.nav__trigger[aria-expanded="true"]{color:var(--navy)}
+.nav__trigger:hover svg,.nav__trigger[aria-expanded="true"] svg{opacity:1;color:var(--gold)}
+.nav__trigger[aria-expanded="true"] svg{transform:rotate(180deg)}
+.nav__trigger::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;
+  background:var(--gold);border-radius:2px 2px 0 0;
+  transform:scaleX(0);transition:.25s;
+}
+.nav__trigger:hover::after,.nav__trigger[aria-expanded="true"]::after{transform:scaleX(1)}
+.nav__trigger::before{content:"";position:absolute;left:-10px;right:-10px;top:100%;height:50px;pointer-events:auto}
+
+/* Nav actions */
+.nav__actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.nav__icon-btn{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--ink-15);
+  color:var(--ink-50);display:grid;place-items:center;font-size:1.05rem;
+  transition:color .2s,border-color .2s,background .2s;
+}
+.nav__icon-btn:hover{color:var(--navy);border-color:var(--ink-30);background:var(--bg-2)}
+.nav__lang{display:flex;align-items:center;gap:2px}
+.nav__lang-btn{padding:.35rem .7rem;border-radius:.35rem;font-size:.75rem;font-weight:700;color:var(--ink-50);transition:.2s}
+.nav__lang-btn.active{background:var(--gold);color:#fff}
+.nav__lang-sep{color:var(--ink-30);font-size:.8rem}
+.nav__apply{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.55rem 1.25rem;border-radius:2rem;
+  background:var(--navy);color:#fff;
+  font-size:.8rem;font-weight:700;transition:.25s;
+}
+.nav__apply:hover{background:var(--navy-2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(10,22,40,.2)}
+.nav__burger{display:none;flex-direction:column;gap:5px;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid var(--ink-15);border-radius:.5rem}
+.nav__burger span{width:18px;height:1.5px;background:var(--ink);border-radius:2px;transition:.3s}
+.nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0;width:0}
+.nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ══════════════════════════════════════════
+   EDGE TRIGGER TAB — always visible on right
+══════════════════════════════════════════ */
+.edge-tab{
+  position:fixed;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:8990;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  width:22px;
+  height:72px;
+  background:linear-gradient(180deg,var(--navy) 0%,#1a3a6e 100%);
+  border-radius:10px 0 0 10px;
+  border:1px solid rgba(201,168,76,.3);
+  border-right:none;
+  box-shadow:-4px 0 24px rgba(10,22,40,.22);
+  cursor:pointer;
+  transition:width .25s ease,box-shadow .25s;
+}
+.edge-tab:hover{
+  width:28px;
+  box-shadow:-6px 0 32px rgba(10,22,40,.34);
+}
+.edge-tab span{
+  display:block;
+  width:12px;
+  height:1.5px;
+  background:rgba(255,255,255,.75);
+  border-radius:2px;
+  transition:width .25s,background .25s;
+}
+.edge-tab:hover span{background:#fff;width:14px}
+.edge-tab span:nth-child(2){width:8px}
+.edge-tab:hover span:nth-child(2){width:10px}
+.edge-tab-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);
+  margin-bottom:2px;
+  box-shadow:0 0 6px rgba(201,168,76,.6);
+}
+
+/* ══════════════════════════════════════════
+   PREMIUM SLIDING PANEL — dark navy matching reference
+══════════════════════════════════════════ */
+.side-panel{
+  position:fixed;
+  inset:0 0 0 auto;
+  z-index:9100;
+  width:min(360px,96vw);
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(160deg,#0a1a35 0%,#0d2245 40%,#0a1a35 100%);
+  border-left:1px solid rgba(201,168,76,.2);
+  box-shadow:-20px 0 80px rgba(0,0,0,.55);
+  transform:translateX(100%);
+  transition:transform .42s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+  will-change:transform;
+}
+.side-panel.peeking{transform:translateX(calc(100% - 10px))}
+.side-panel.open{transform:translateX(0)}
+/* starfield texture */
+.side-panel::before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(201,168,76,.12),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(20,60,120,.25),transparent 45%),
+    radial-gradient(circle at 50% 50%,rgba(10,28,60,.4),transparent 70%);
+}
+.sp-top{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 1.375rem 1rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  flex-shrink:0;
+}
+.sp-logo{display:flex;align-items:center;gap:.625rem}
+.sp-logo img{height:44px;object-fit:contain;filter:brightness(0) invert(1)}
+.sp-logo-text{display:flex;flex-direction:column}
+.sp-logo-ar{font-size:.48rem;color:var(--gold);letter-spacing:.05em;line-height:1.3}
+.sp-logo-en{font-size:.44rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.12em;text-transform:uppercase;line-height:1.3}
+.sp-close{
+  width:34px;height:34px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);
+  color:#fff;font-size:1rem;display:grid;place-items:center;
+  cursor:pointer;transition:.22s;flex-shrink:0;
+}
+.sp-close:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+
+/* EN / AR toggle */
+.sp-lang{
+  position:relative;z-index:2;
+  display:flex;gap:.5rem;
+  padding:.875rem 1.375rem;
+  flex-shrink:0;
+}
+.sp-lang-btn{
+  flex:1;height:38px;border-radius:.5rem;
+  border:1px solid rgba(255,255,255,.18);
+  font-size:.82rem;font-weight:700;
+  color:rgba(255,255,255,.55);
+  background:transparent;cursor:pointer;transition:.22s;
+}
+.sp-lang-btn.active{
+  background:linear-gradient(135deg,#c9a84c,#e4c06a);
+  color:var(--navy);border-color:transparent;
+  box-shadow:0 4px 16px rgba(201,168,76,.35);
+}
+
+/* Search bar inside panel */
+.sp-search{
+  position:relative;z-index:2;
+  margin:0 1.375rem .875rem;
+  display:flex;align-items:center;gap:.625rem;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:.625rem;
+  padding:.625rem .875rem;
+  transition:border-color .2s;
+  flex-shrink:0;
+}
+.sp-search:focus-within{border-color:rgba(201,168,76,.45)}
+.sp-search i{font-size:1rem;color:rgba(255,255,255,.4);flex-shrink:0}
+.sp-search input{
+  flex:1;background:none;border:none;outline:none;
+  font-size:.875rem;color:#fff;font-family:var(--body);
+}
+.sp-search input::placeholder{color:rgba(255,255,255,.35)}
+
+/* Nav items */
+.sp-nav{
+  position:relative;z-index:2;
+  flex:1;overflow-y:auto;
+  padding:.25rem 1rem 1rem;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,.1) transparent;
+}
+.sp-nav::-webkit-scrollbar{width:3px}
+.sp-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:2px}
+
+/* Main nav item row */
+.sp-item{
+  border-radius:.75rem;
+  margin-bottom:.25rem;
+  overflow:hidden;
+  border:1px solid transparent;
+  transition:border-color .2s;
+}
+.sp-item.expanded{
+  border-color:rgba(201,168,76,.35);
+  background:rgba(255,255,255,.04);
+}
+.sp-item-head{
+  display:flex;align-items:center;gap:.875rem;
+  padding:.9rem 1rem;
+  cursor:pointer;
+  transition:background .18s;
+  border-radius:.75rem;
+}
+.sp-item-head:hover{background:rgba(255,255,255,.06)}
+.sp-item.expanded .sp-item-head{
+  background:rgba(14,58,120,.45);
+  border-radius:.75rem .75rem 0 0;
+}
+.sp-item-ico{
+  width:36px;height:36px;border-radius:.5rem;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.1);
+  display:grid;place-items:center;
+  font-size:1rem;color:rgba(255,255,255,.7);
+  flex-shrink:0;transition:.2s;
+}
+.sp-item.expanded .sp-item-ico{
+  background:rgba(201,168,76,.2);
+  border-color:rgba(201,168,76,.4);
+  color:var(--gold);
+}
+.sp-item-label{
+  flex:1;font-size:.95rem;font-weight:600;
+  color:rgba(255,255,255,.88);
+}
+.sp-item.expanded .sp-item-label{color:#fff}
+.sp-item-toggle{
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.6);
+  display:grid;place-items:center;font-size:.85rem;
+  transition:background .2s,border-color .2s,transform .3s;
+  flex-shrink:0;
+}
+.sp-item.expanded .sp-item-toggle{
+  background:rgba(201,168,76,.25);
+  border-color:rgba(201,168,76,.5);
+  color:var(--gold);
+  transform:rotate(45deg);
+}
+
+/* Sub-items */
+.sp-sub{
+  display:none;
+  padding:.25rem .75rem .625rem 1rem;
+}
+.sp-item.expanded .sp-sub{display:block}
+.sp-sub-row{
+  display:flex;align-items:center;gap:.625rem;
+  padding:.575rem .5rem;
+  border-radius:.5rem;
+  color:rgba(255,255,255,.72);
+  font-size:.875rem;
+  cursor:pointer;
+  transition:color .18s,background .18s;
+  text-decoration:none;
+}
+.sp-sub-row:hover{color:#fff;background:rgba(255,255,255,.05)}
+.sp-sub-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;
+  box-shadow:0 0 5px rgba(201,168,76,.5);
+}
+.sp-sub-text{flex:1}
+.sp-sub-arrow{
+  font-size:.75rem;color:rgba(255,255,255,.3);
+  transition:color .18s,transform .18s;
+}
+.sp-sub-row:hover .sp-sub-arrow{color:var(--gold);transform:translateX(3px)}
+.sp-sub-viewall{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:.375rem;padding:.375rem .5rem;
+  font-size:.78rem;font-weight:600;color:var(--gold);
+  cursor:pointer;transition:opacity .18s;text-decoration:none;
+}
+.sp-sub-viewall:hover{opacity:.75}
+.sp-sub-viewall i{font-size:.85rem}
+
+/* Apply CTA */
+.sp-apply{
+  position:relative;z-index:2;
+  padding:1rem 1.375rem 1.5rem;
+  flex-shrink:0;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.sp-apply a{
+  display:flex;align-items:center;justify-content:center;gap:.625rem;
+  height:52px;border-radius:2rem;
+  background:linear-gradient(135deg,#c9a84c,#e4c06a);
+  color:var(--navy);font-weight:800;font-size:.9rem;
+  box-shadow:0 8px 28px rgba(201,168,76,.35);
+  transition:transform .22s,box-shadow .22s;text-decoration:none;
+}
+.sp-apply a:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(201,168,76,.45)}
+.sp-apply a i{font-size:1rem}
+
+/* Scrim */
+.sp-scrim{
+  position:fixed;inset:0;z-index:9099;
+  background:rgba(4,12,28,.6);
+  backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .38s,visibility .38s;
+}
+.sp-scrim.on{opacity:1;visibility:visible;pointer-events:auto}
+
+/* ─── MEGA DROPDOWN — white, elevated ─── */
+.mega{
+  position:fixed;left:0;right:0;z-index:999;
+  top:var(--nav-h);
+  background:#fff;
+  border-top:2px solid var(--gold);
+  border-bottom:1px solid var(--ink-08);
+  box-shadow:0 24px 80px rgba(10,22,40,.14);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translateY(-8px);
+  transition:opacity .22s ease,visibility .22s ease,transform .28s ease;
+}
+.mega.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+.mega__inner{
+  display:grid;gap:0;
+  padding:2.5rem clamp(20px,3.5vw,56px);
+}
+.mega__promo{
+  padding-right:2.5rem;border-right:1px solid var(--ink-08);
+}
+.mega__promo .gold-label{margin-bottom:1.25rem}
+.mega__promo h3{font-family:var(--display);font-size:clamp(1.5rem,2.2vw,2.2rem);font-weight:600;line-height:1.15;margin-bottom:.75rem;color:var(--navy)}
+.mega__promo p{font-size:.875rem;line-height:1.7;color:var(--ink-70);margin-bottom:1.5rem}
+.mega__promo-img{border-radius:.75rem;overflow:hidden;aspect-ratio:16/9;margin-bottom:1.25rem}
+.mega__promo-img img{width:100%;height:100%;object-fit:cover}
+.mega__stats{display:flex;gap:1.5rem}
+.mega__stat{text-align:center}
+.mega__stat b{display:block;font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--navy)}
+.mega__stat span{font-size:.7rem;color:var(--ink-50);letter-spacing:.05em;text-transform:uppercase}
+
+.mega__col{padding:0 2rem;border-right:1px solid var(--ink-08)}
+.mega__col:last-child{border-right:none}
+.mega__col-head{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--gold-a15)}
+.mega__row{
+  display:flex;align-items:flex-start;gap:.75rem;
+  padding:.65rem .75rem;border-radius:.5rem;
+  color:var(--ink-70);font-size:.875rem;
+  transition:background .2s,transform .2s;margin-bottom:.2rem;
+}
+.mega__row:hover{background:var(--bg-2);transform:translateX(4px)}
+.mega__row-ico{width:34px;height:34px;border-radius:.5rem;background:var(--bg-2);display:grid;place-items:center;font-size:1rem;flex-shrink:0;color:var(--navy)}
+.mega__row b{display:block;font-size:.83rem;font-weight:600;color:var(--navy);line-height:1.25}
+.mega__row span{font-size:.72rem;color:var(--ink-50);line-height:1.35;margin-top:.1rem}
+
+.mega--research .mega__inner{grid-template-columns:1.4fr 1fr 1fr 1fr}
+.mega--study .mega__inner,
+.mega--faculties .mega__inner,
+.mega--admissions .mega__inner,
+.mega--campus .mega__inner,
+.mega--about .mega__inner{grid-template-columns:1.4fr 1fr 1fr}
+.mega--founder .mega__inner{grid-template-columns:1fr 1.2fr}
+
+/* Scrim */
+.nav__scrim{position:fixed;inset:0;z-index:998;background:rgba(10,22,40,.18);opacity:0;visibility:hidden;pointer-events:none;transition:.22s}
+.nav__scrim.on{opacity:1;visibility:visible}
+
+/* ─── MOBILE DRAWER ─── */
+.nav__drawer{
+  position:fixed;inset:0 0 0 auto;z-index:10000;
+  width:min(380px,100vw);
+  background:#fff;
+  border-left:1px solid var(--ink-08);
+  transform:translateX(100%);
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;display:flex;flex-direction:column;
+}
+.nav__drawer.open{transform:translateX(0)}
+.drawer__top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 1.5rem;border-bottom:1px solid var(--ink-08);
+}
+.drawer__top img{height:44px;object-fit:contain}
+.drawer__close{width:36px;height:36px;border:1px solid var(--ink-15);border-radius:.4rem;color:var(--ink);font-size:1.1rem;display:grid;place-items:center}
+.drawer__lang{display:flex;gap:.5rem;padding:1rem 1.5rem;border-bottom:1px solid var(--ink-08)}
+.drawer__lang-btn{flex:1;height:38px;border-radius:.5rem;border:1px solid var(--ink-15);font-size:.8rem;font-weight:700;color:var(--ink-50);transition:.2s}
+.drawer__lang-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.drawer__nav{flex:1;padding:1rem 1.5rem}
+.drawer__group{border-bottom:1px solid var(--ink-08)}
+.drawer__group summary{list-style:none;padding:1rem .5rem;font-size:.95rem;font-weight:600;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.drawer__group summary::-webkit-details-marker{display:none}
+.drawer__group summary::after{content:"+";color:var(--gold);font-size:1.1rem;font-weight:300;transition:.25s}
+.drawer__group[open] summary::after{transform:rotate(45deg)}
+.drawer__sub{display:flex;flex-direction:column;padding:.25rem 0 .75rem 1rem;gap:.15rem}
+.drawer__sub a{padding:.6rem .75rem;border-radius:.4rem;font-size:.875rem;color:var(--ink-70);transition:.18s}
+.drawer__sub a:hover{background:var(--bg-2);color:var(--navy)}
+.drawer__apply{padding:1.5rem}
+.drawer__apply a{display:flex;align-items:center;justify-content:center;height:50px;border-radius:2rem;background:var(--navy);color:#fff;font-weight:700;font-size:.9rem}
+
+@media(max-width:1100px){.nav__links{display:none}.nav__burger{display:flex}.nav__lang,.nav__icon-btn{display:none}}
+@media(max-width:640px){:root{--nav-h:70px}.nav__apply{display:none}}
+
+/* ═══════════════════════════════════════════════════
+   HERO — white left panel, big photo right
+═══════════════════════════════════════════════════ */
+.hero{
+  position:relative;display:grid;
+  grid-template-columns:38% 62%;
+  min-height:calc(100svh - var(--nav-h));
+  background:var(--bg);overflow:hidden;
+}
+/* diagonal gold split */
+.hero::after{
+  content:"";position:absolute;
+  left:calc(38% - 30px);top:-20%;
+  width:200px;height:140%;
+  border-right:2px solid rgba(184,137,47,.5);
+  border-radius:0 0 80% 0;
+  transform:rotate(5deg);
+  opacity:1;z-index:5;pointer-events:none;
+}
+
+.hero__copy{
+  position:relative;z-index:6;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,6vh,80px) clamp(24px,3.5vw,60px) clamp(40px,6vh,80px) clamp(40px,5.5vw,92px);
+}
+.hero__label{margin-bottom:clamp(1rem,2.5vh,1.75rem)}
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(46px,5.8vw,88px);
+  font-weight:700;line-height:.96;
+  letter-spacing:-.03em;
+  color:var(--navy);
+  margin-bottom:clamp(.75rem,1.8vh,1.25rem);
+}
+.hero h1 .gold{color:var(--gold);font-style:italic}
+.hero__desc{
+  font-size:clamp(.875rem,1.1vw,1rem);line-height:1.75;
+  color:var(--ink-70);max-width:460px;
+  margin-bottom:clamp(1.5rem,3.5vh,2.5rem);
+}
+.hero__cta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:clamp(1.75rem,4vh,3rem)}
+.hero__stats{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.hero__avatars{display:flex}
+.hero__avatars img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);margin-left:-10px;box-shadow:0 2px 8px rgba(10,22,40,.12)}
+.hero__avatars img:first-child{margin-left:0}
+.hero__stat-text{font-size:.78rem;color:var(--ink-50);line-height:1.45}
+.hero__stat-text strong{display:block;font-size:1rem;color:var(--navy);font-weight:700}
+.hero__divider{width:1px;height:32px;background:var(--ink-15)}
+
+/* Image side */
+.hero__visual{position:relative;z-index:2;overflow:hidden}
+.hero__visual img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transition:opacity .8s ease;
+}
+.hero__visual img.active{opacity:1}
+.hero__visual img:not(.active){opacity:0}
+/* gradient fade from left - white version */
+.hero__visual::before{
+  content:"";position:absolute;inset:0;z-index:3;
+  background:linear-gradient(90deg,var(--bg) 0%,rgba(255,255,255,.4) 16%,rgba(255,255,255,.05) 38%,transparent 62%);
+}
+/* dots */
+.hero__dots{position:absolute;z-index:9;bottom:2rem;right:2rem;display:flex;gap:.55rem}
+.hero__dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,.6);cursor:pointer;transition:.3s;box-shadow:0 1px 4px rgba(10,22,40,.2)}
+.hero__dot.active{background:var(--gold);width:26px;border-radius:4px}
+
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero::after{display:none}
+  .hero__copy{padding:3rem 1.5rem 2.5rem}
+  .hero__visual{min-height:55vw}
+  .hero__visual::before{background:linear-gradient(180deg,rgba(255,255,255,.15),transparent)}
+}
+@media(max-width:640px){
+  .hero__visual{min-height:260px}
+  .hero h1{font-size:clamp(38px,11vw,56px)}
+}
+
+/* ═══════════════════════════════════════════════════
+   HIGHLIGHTS STRIP
+═══════════════════════════════════════════════════ */
+.strip{
+  position:relative;z-index:10;
+  margin-top:-2px;
+  background:var(--bg);
+  border-top:3px solid var(--gold);
+  border-bottom:1px solid var(--ink-08);
+  box-shadow:0 4px 24px rgba(10,22,40,.06);
+}
+.strip__grid{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  max-width:1440px;margin:0 auto;
+}
+.strip__item{
+  padding:1.75rem clamp(1rem,2vw,1.75rem);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  border-right:1px solid var(--ink-08);transition:background .25s;
+}
+.strip__item:last-child{border-right:none}
+.strip__item:hover{background:var(--bg-2)}
+.strip__icon{font-size:1.75rem;margin-bottom:.625rem}
+.strip__title{font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:.3rem;letter-spacing:.03em}
+.strip__desc{font-size:.72rem;color:var(--ink-50);line-height:1.45}
+@media(max-width:900px){.strip__grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:580px){.strip__grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══════════════════════════════════════════════════
+   MEDICINE & SURGERY COLLEGE SECTION
+═══════════════════════════════════════════════════ */
+.college{padding:clamp(60px,8vh,110px) 0;background:var(--bg-2)}
+.college__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.college__media{position:relative;border-radius:1rem;overflow:hidden;aspect-ratio:4/3;box-shadow:0 20px 60px rgba(10,22,40,.12)}
+.college__media img{width:100%;height:100%;object-fit:cover}
+.college__media::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.15),transparent 60%)}
+.college__play{
+  position:absolute;left:1.75rem;bottom:1.75rem;z-index:2;
+  width:64px;height:64px;border-radius:50%;
+  background:#fff;color:var(--navy);font-size:1.3rem;
+  display:grid;place-items:center;
+  box-shadow:0 12px 32px rgba(10,22,40,.18);
+  transition:transform .25s,box-shadow .25s;
+}
+.college__play:hover{transform:scale(1.08);box-shadow:0 18px 40px rgba(10,22,40,.25)}
+.college__copy .gold-label{margin-bottom:1rem}
+.college__copy h2{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:700;line-height:1.05;color:var(--navy);margin-bottom:1rem;letter-spacing:-.02em}
+.college__copy p{font-size:.9375rem;line-height:1.75;color:var(--ink-70);margin-bottom:2rem;max-width:540px}
+.college__stats{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem}
+.c-stat{
+  background:#fff;border:1px solid var(--ink-08);border-radius:.625rem;
+  padding:1rem .625rem;text-align:center;transition:.25s;
+  box-shadow:0 2px 8px rgba(10,22,40,.06);
+}
+.c-stat:hover{box-shadow:0 8px 24px rgba(10,22,40,.10);border-color:var(--gold-a30);transform:translateY(-2px)}
+.c-stat b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1}
+.c-stat span{font-size:.68rem;color:var(--ink-50);line-height:1.35;margin-top:.3rem;display:block}
+@media(max-width:900px){.college__grid{grid-template-columns:1fr}.college__stats{grid-template-columns:repeat(3,1fr)}}
+
+/* ═══════════════════════════════════════════════════
+   PROGRAMS CAROUSEL
+═══════════════════════════════════════════════════ */
+.programs{padding:clamp(60px,8vh,110px) 0;background:var(--bg)}
+.programs__head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem}
+.programs__title{font-family:var(--display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;color:var(--navy);letter-spacing:-.02em}
+.programs__title em{font-style:italic;color:var(--ink-50)}
+.programs__view-all{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.55rem 1.25rem;border-radius:2rem;
+  border:1px solid var(--gold-a30);color:var(--gold);
+  font-size:.78rem;font-weight:600;white-space:nowrap;transition:.2s;
+}
+.programs__view-all:hover{background:var(--gold);color:#fff}
+.programs__shell{position:relative;margin:0 clamp(-20px,-4vw,-72px);padding:0 clamp(52px,7vw,92px) 3rem}
+.programs__track{
+  display:grid;grid-auto-flow:column;
+  grid-auto-columns:clamp(240px,22vw,320px);
+  gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:1rem 0 2.5rem;scrollbar-width:none;
+}
+.programs__track::-webkit-scrollbar{display:none}
+/* Program cards keep their dark overlay — works on both themes */
+.prog-card{
+  scroll-snap-align:start;border-radius:1rem;overflow:hidden;
+  position:relative;aspect-ratio:3/4;cursor:pointer;
+  background:var(--bg-3);border:1px solid var(--ink-08);
+  box-shadow:0 4px 20px rgba(10,22,40,.08);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.prog-card:hover{transform:translateY(-10px);box-shadow:0 28px 60px rgba(10,22,40,.18)}
+.prog-card__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.prog-card:hover .prog-card__img{transform:scale(1.07)}
+.prog-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.92) 35%,rgba(10,22,40,.25) 65%,transparent 100%)}
+.prog-card__body{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.25rem}
+.prog-card__icon{
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.25);
+  display:grid;place-items:center;margin-bottom:.875rem;overflow:hidden;
+}
+.prog-card__icon img{width:28px;height:28px;object-fit:contain}
+.prog-card__name{font-family:var(--display);font-size:1.5rem;font-weight:700;color:#fff;line-height:1}
+.prog-card__full{font-size:.72rem;color:rgba(255,255,255,.65);margin-top:.3rem;line-height:1.35}
+.prog-card__learn{
+  display:inline-flex;align-items:center;gap:.4rem;margin-top:.875rem;
+  font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.05em;text-transform:uppercase;
+}
+/* arrows */
+.prog-arrow{
+  position:absolute;top:45%;transform:translateY(-50%);
+  width:52px;height:52px;border-radius:50%;border:1px solid var(--ink-15);
+  background:#fff;color:var(--navy);font-size:1.4rem;
+  display:grid;place-items:center;z-index:3;transition:.2s;
+  box-shadow:0 4px 16px rgba(10,22,40,.10);
+}
+.prog-arrow:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.prog-arrow.prev{left:2px}.prog-arrow.next{right:2px}
+/* dots */
+.prog-dots{display:flex;justify-content:center;gap:.6rem}
+.prog-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--ink-15);cursor:pointer;transition:.3s}
+.prog-dot.active{background:var(--gold);transform:scale(1.3)}
+@media(max-width:700px){.programs__shell{margin:0;padding:0 0 3rem}.prog-arrow{display:none}.programs__track{grid-auto-columns:78vw}}
+
+/* ═══════════════════════════════════════════════════
+   AR CAMPUS
+═══════════════════════════════════════════════════ */
+.ar-campus{padding:clamp(60px,8vh,110px) 0;background:var(--bg-2)}
+.ar-campus__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.ar-campus__copy .gold-label{margin-bottom:1rem}
+.ar-campus__copy h2{font-family:var(--display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;color:var(--navy);line-height:1.08;margin-bottom:1rem;letter-spacing:-.02em}
+.ar-campus__copy h2 em{font-style:normal;color:var(--gold)}
+.ar-campus__copy p{font-size:.9375rem;line-height:1.75;color:var(--ink-70);max-width:500px;margin-bottom:1.75rem}
+.ar-stores{display:flex;gap:.875rem;margin-top:1.75rem}
+.ar-store{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.7rem 1.25rem;border-radius:.625rem;
+  background:#fff;border:1px solid var(--ink-08);
+  box-shadow:0 2px 8px rgba(10,22,40,.06);
+  transition:border-color .2s,box-shadow .2s;cursor:pointer;
+}
+.ar-store:hover{border-color:var(--gold-a30);box-shadow:0 4px 16px rgba(10,22,40,.10)}
+.ar-store i{font-size:1.4rem;color:var(--ink-70)}
+.ar-store small{display:block;font-size:.6rem;color:var(--ink-50);font-weight:500;letter-spacing:.04em}
+.ar-store b{font-size:.82rem;font-weight:700;color:var(--navy)}
+/* phone visual */
+.ar-campus__device{position:relative}
+.ar-campus__frame{
+  background:#fff;border:1px solid var(--ink-08);border-radius:1.5rem;
+  padding:1.25rem;box-shadow:0 20px 60px rgba(10,22,40,.10);
+}
+.ar-campus__frame img{border-radius:1rem;width:100%}
+.ar-pin{
+  position:absolute;background:#fff;border-radius:.5rem;
+  padding:.35rem .8rem;font-size:.68rem;font-weight:700;color:var(--navy);
+  box-shadow:0 4px 16px rgba(10,22,40,.15);display:flex;align-items:center;gap:.3rem;
+}
+.ar-pin i{color:var(--gold);font-size:.85rem}
+.ar-pin--1{top:16%;left:-6%}
+.ar-pin--2{top:38%;right:-6%}
+.ar-pin--3{bottom:22%;left:8%}
+@media(max-width:900px){.ar-campus__grid{grid-template-columns:1fr}.ar-pin{display:none}}
+
+/* ═══════════════════════════════════════════════════
+   FOUNDER — photo | center text | arabic quote
+   Layout imported from reference design
+═══════════════════════════════════════════════════ */
+.founder{padding:clamp(60px,8vh,110px) 0;background:var(--bg-2)}
+.founder__grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.founder__img-wrap{position:relative}
+.founder__img{
+  width:100%;border-radius:1rem;object-fit:cover;
+  aspect-ratio:3/4;object-position:top;
+  box-shadow:0 24px 60px rgba(10,22,40,.14);
+}
+.founder__badge{
+  position:absolute;bottom:-1rem;right:-1rem;
+  background:var(--gold);color:var(--navy);
+  padding:.75rem 1rem;border-radius:.75rem;
+  font-size:.68rem;font-weight:700;line-height:1.5;
+  box-shadow:0 8px 24px rgba(184,137,47,.32);
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.founder__center{text-align:center;padding:0 .5rem}
+.founder__label{margin-bottom:.875rem}
+.founder__title{
+  font-family:var(--display);
+  font-size:clamp(1.6rem,2.8vw,2.6rem);
+  font-weight:700;color:var(--navy);
+  line-height:1.15;margin-bottom:1.25rem;letter-spacing:-.02em;
+}
+.founder__title em{color:var(--gold);font-style:italic}
+.founder__desc{
+  font-size:.9375rem;line-height:1.8;color:var(--ink-70);
+  margin-bottom:1.25rem;max-width:480px;margin-left:auto;margin-right:auto;
+}
+.founder__name{
+  font-family:var(--display);font-size:1.1rem;
+  font-weight:700;color:var(--navy);letter-spacing:.02em;
+}
+.founder__role{font-size:.72rem;color:var(--gold);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:.35rem}
+.founder__quote-block{text-align:right;padding-right:.5rem}
+.founder__quote-icon{
+  font-family:var(--display);font-size:6rem;
+  color:var(--gold);line-height:.5;
+  margin-bottom:1.25rem;opacity:.35;
+}
+.founder__quote-ar{
+  font-size:1rem;line-height:2;color:var(--navy);
+  direction:rtl;margin-bottom:1rem;
+}
+.founder__quote-name{font-size:.875rem;font-weight:700;color:var(--navy);direction:rtl}
+
+@media(max-width:1050px){
+  .founder__grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .founder__quote-block{display:none}
+}
+@media(max-width:700px){
+  .founder__grid{grid-template-columns:1fr;gap:2.5rem;max-width:480px;margin:0 auto}
+  .founder__img-wrap{max-width:300px;margin:0 auto}
+}
+
+/* ═══════════════════════════════════════════════════
+   GALLERY / REASONS
+═══════════════════════════════════════════════════ */
+.gallery{padding:clamp(48px,6vh,80px) 0;background:var(--bg-2)}
+.gallery__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.g-card{
+  border-radius:.875rem;overflow:hidden;
+  border:1px solid var(--ink-08);background:#fff;
+  font-size:.72rem;font-weight:600;color:var(--navy);
+  text-align:center;transition:.28s;
+  box-shadow:0 2px 8px rgba(10,22,40,.06);
+}
+.g-card:hover{transform:translateY(-6px);border-color:var(--gold-a30);box-shadow:0 18px 40px rgba(10,22,40,.12)}
+.g-card img{height:90px;width:100%;object-fit:cover;filter:saturate(1.05)}
+.g-card div{padding:.75rem .5rem .875rem}
+@media(max-width:900px){.gallery__grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:540px){.gallery__grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══════════════════════════════════════════════════
+   NEWS & EVENTS
+═══════════════════════════════════════════════════ */
+.news{padding:clamp(60px,8vh,110px) 0;background:var(--bg)}
+.news__grid{display:grid;grid-template-columns:1.3fr .9fr;gap:2rem}
+.panel{background:#fff;border:1px solid var(--ink-08);border-radius:1.25rem;padding:1.75rem;box-shadow:0 4px 20px rgba(10,22,40,.06)}
+.panel__head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.panel__head h2{font-family:var(--display);font-size:clamp(1.25rem,2vw,1.75rem);font-weight:700;color:var(--navy);letter-spacing:-.02em}
+.panel__head a{font-size:.75rem;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:.35rem}
+.news-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem}
+.n-card{border-radius:.75rem;overflow:hidden;border:1px solid var(--ink-08);background:var(--bg-2);transition:.25s}
+.n-card:hover{border-color:var(--gold-a30);transform:translateY(-3px);box-shadow:0 10px 30px rgba(10,22,40,.10)}
+.n-card img{height:80px;width:100%;object-fit:cover}
+.n-card__body{padding:.875rem}
+.n-cat{font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.n-card h3{font-size:.78rem;line-height:1.4;color:var(--navy);font-weight:600;letter-spacing:0;font-family:var(--body)}
+.n-card .date{font-size:.68rem;color:var(--ink-50);margin-top:.4rem}
+/* events */
+.ev-list{display:flex;flex-direction:column;gap:.75rem}
+.ev-item{display:flex;gap:.875rem;align-items:flex-start;padding:.875rem;border-radius:.75rem;background:var(--bg-2);border:1px solid var(--ink-08);transition:.2s}
+.ev-item:hover{border-color:var(--gold-a30);box-shadow:0 4px 16px rgba(10,22,40,.08)}
+.ev-date{flex-shrink:0;width:48px;height:48px;border-radius:.625rem;background:var(--navy);border:1px solid var(--ink-15);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ev-date b{font-size:1.1rem;font-weight:800;color:#fff;line-height:1}
+.ev-date span{font-size:.55rem;text-transform:uppercase;color:var(--gold);font-weight:700;letter-spacing:.06em}
+.ev-info small{font-size:.65rem;color:var(--ink-50);font-weight:600;text-transform:uppercase;letter-spacing:.1em}
+.ev-info h3{font-size:.8rem;font-weight:600;color:var(--navy);margin-top:.3rem;line-height:1.35;font-family:var(--body)}
+@media(max-width:900px){.news__grid{grid-template-columns:1fr}.news-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.news-cards{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════════
+   CTA BANNER — navy on light page creates strong contrast
+═══════════════════════════════════════════════════ */
+.cta-banner{
+  padding:clamp(56px,8vh,100px) 1.5rem;
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:"";position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.cta-banner__inner{position:relative;z-index:1}
+.cta-banner h2{font-family:var(--display);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.875rem}
+.cta-banner p{font-size:clamp(.875rem,.95vw,1rem);color:rgba(255,255,255,.72);max-width:560px;margin:0 auto 2rem;line-height:1.7}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER — navy for contrast
+═══════════════════════════════════════════════════ */
+.footer{background:var(--navy);border-top:3px solid var(--gold);padding:clamp(56px,8vh,96px) 0 0}
+.footer__grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1fr 1.3fr;
+  gap:clamp(2rem,3.5vw,4rem);
+  padding-bottom:clamp(40px,6vh,72px);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.footer__logo img{height:clamp(52px,5vw,72px);object-fit:contain;filter:brightness(0) invert(1);margin-bottom:1.25rem}
+.footer__tagline{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:1.5rem;max-width:320px}
+.footer__socials{display:flex;gap:.625rem}
+.footer__social{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.20);color:rgba(255,255,255,.55);
+  display:grid;place-items:center;font-size:.85rem;
+  transition:.2s;cursor:pointer;
+}
+.footer__social:hover{border-color:var(--gold);color:var(--gold)}
+.footer__col h3{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;margin-bottom:1.25rem}
+.footer__links{display:flex;flex-direction:column;gap:.625rem}
+.footer__links a{font-size:.82rem;color:rgba(255,255,255,.55);transition:.2s;cursor:pointer}
+.footer__links a:hover{color:var(--gold)}
+.footer__contact{display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.5rem}
+.footer__contact-item{display:flex;gap:.6rem;font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.5}
+.footer__contact-item i{color:var(--gold);flex-shrink:0;margin-top:.1rem}
+.footer__bottom{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.875rem;
+  padding:1.5rem 0;font-size:.72rem;color:rgba(255,255,255,.38);
+}
+.footer__bottom-links{display:flex;gap:1.5rem}
+.footer__bottom-links a{color:rgba(255,255,255,.38);transition:.2s;cursor:pointer}
+.footer__bottom-links a:hover{color:rgba(255,255,255,.72)}
+@media(max-width:1050px){.footer__grid{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media(max-width:580px){.footer__grid{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════════
+   SEARCH OVERLAY
+═══════════════════════════════════════════════════ */
+.search-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(10,22,40,.55);backdrop-filter:blur(16px);
+  display:flex;align-items:flex-start;justify-content:center;padding-top:10vh;
+  opacity:0;visibility:hidden;transition:.25s;
+}
+.search-overlay.open{opacity:1;visibility:visible}
+.search-box{
+  width:min(700px,calc(100% - 2rem));
+  background:#fff;border:1px solid var(--ink-08);
+  border-radius:1rem;overflow:hidden;
+  box-shadow:0 32px 80px rgba(10,22,40,.20);
+  transform:translateY(-16px) scale(.97);transition:.26s;
+}
+.search-overlay.open .search-box{transform:none}
+.search-head{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 1.5rem;border-bottom:1px solid var(--ink-08);background:var(--bg-2)}
+.search-head h3{font-family:var(--display);font-size:1.5rem;color:var(--navy)}
+.search-head button{width:36px;height:36px;border:1px solid var(--ink-15);border-radius:50%;color:var(--navy);font-size:.9rem;display:grid;place-items:center}
+.search-input-row{display:flex;gap:.75rem;align-items:center;padding:1rem 1.5rem;border-bottom:1px solid var(--ink-08)}
+.search-input-row i{font-size:1.2rem;color:var(--ink-50)}
+.search-input-row input{flex:1;background:none;border:none;outline:none;font-size:.95rem;color:var(--navy);font-family:var(--body)}
+.search-input-row input::placeholder{color:var(--ink-30)}
+.search-results{padding:.875rem 1rem 1rem;max-height:320px;overflow:auto}
+.s-result{display:flex;gap:.875rem;align-items:center;padding:.875rem;border-radius:.625rem;border:1px solid transparent;transition:.2s;cursor:pointer}
+.s-result:hover{background:var(--bg-2);border-color:var(--ink-08)}
+.s-result i{font-size:1.3rem;color:var(--navy);width:40px;height:40px;background:var(--bg-2);border-radius:.5rem;display:grid;place-items:center;flex-shrink:0}
+.s-result b{display:block;color:var(--navy);font-size:.875rem;font-weight:600}
+.s-result small{color:var(--ink-50);font-size:.75rem}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+
+    <!-- Logo -->
+    <a href="#home" class="nav__logo">
+      <img src="assets/img/logo-full-new.png" alt="AKU" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="nav__logo-text" style="display:none">
+        <span class="nav__logo-ar">جامعة عين لخليج للعلوم الصحية</span>
+        <span class="nav__logo-en">Ain Al Khaleej University<br>of Health Sciences</span>
+      </div>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="nav__links">
+      <button class="nav__trigger" data-mega="mega-study" aria-expanded="false">Study <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-faculties" aria-expanded="false">Faculties <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-admissions" aria-expanded="false">Admissions <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-research" aria-expanded="false">Research <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-campus" aria-expanded="false">Student Life <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-about" aria-expanded="false">About AKU <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="nav__trigger" data-mega="mega-founder" aria-expanded="false">Founder <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </div>
+
+    <!-- Actions -->
+    <div class="nav__actions">
+      <button class="nav__icon-btn" id="searchOpen" aria-label="Search"><i class="ri-search-line"></i></button>
+      <div class="nav__lang">
+        <button class="nav__lang-btn active">EN</button>
+        <span class="nav__lang-sep">|</span>
+        <button class="nav__lang-btn">AR</button>
+      </div>
+      <a href="#cta" class="nav__apply">Apply Now <i class="ri-arrow-right-line"></i></a>
+      <button class="nav__burger" id="drawerOpen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MEGA MENUS -->
+
+<!-- Study -->
+<div class="mega mega--study" id="mega-study" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">Programs</div>
+      <h3>World-Class Health Education</h3>
+      <p>Future-ready programs designed to inspire innovation and transform lives across the healthcare sector.</p>
+      <div class="mega__promo-img"><img src="assets/img/img03.png" alt="Study at AKU"></div>
+      <div class="mega__stats">
+        <div class="mega__stat"><b>50+</b><span>Programs</span></div>
+        <div class="mega__stat"><b>12K+</b><span>Clin. Hours</span></div>
+        <div class="mega__stat"><b>95%</b><span>Employability</span></div>
+      </div>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Degree Programs</div>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-heart-pulse-line"></i></div><div><b>MBBS</b><span>Bachelor of Medicine &amp; Surgery</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-tooth-line"></i></div><div><b>BDS</b><span>Bachelor of Dental Surgery</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-nurse-line"></i></div><div><b>BSc Nursing</b><span>Bachelor of Science in Nursing</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-run-line"></i></div><div><b>MSc Physiotherapy</b><span>Master of Science in Physiotherapy</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Allied Health</div>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-capsule-line"></i></div><div><b>BPharmacy</b><span>Bachelor of Pharmacy</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-scan-line"></i></div><div><b>BSc Radiology</b><span>Bachelor of Science in Radiology</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-microscope-line"></i></div><div><b>Medical Lab Sciences</b><span>Bachelor of Medical Lab Sciences</span></div></a>
+      <a href="#programs" class="mega__row"><div class="mega__row-ico"><i class="ri-ear-line"></i></div><div><b>Audiology</b><span>Audiology &amp; Speech Therapy</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Faculties -->
+<div class="mega mega--faculties" id="mega-faculties" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">Colleges</div>
+      <h3>Expert Faculty &amp; World-Class Colleges</h3>
+      <p>Our professors bring decades of clinical expertise and groundbreaking research into every classroom.</p>
+      <div class="mega__promo-img"><img src="assets/img/img01.png" alt="Faculties"></div>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Colleges</div>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-hospital-line"></i></div><div><b>Medicine &amp; Surgery</b><span>Compassionate clinical excellence</span></div></a>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-tooth-line"></i></div><div><b>Dental Sciences</b><span>Precision oral healthcare</span></div></a>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-capsule-line"></i></div><div><b>Pharmacy</b><span>Pharmaceutical sciences</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Allied Health</div>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-nurse-line"></i></div><div><b>Nursing</b><span>Leading with care and skill</span></div></a>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-microscope-line"></i></div><div><b>Medical Laboratory</b><span>Diagnostic science &amp; innovation</span></div></a>
+      <a href="#college" class="mega__row"><div class="mega__row-ico"><i class="ri-scan-line"></i></div><div><b>Radiology &amp; Physiotherapy</b><span>Imaging and rehabilitation</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Admissions -->
+<div class="mega mega--admissions" id="mega-admissions" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">Join AKU</div>
+      <h3>Applications Now Open</h3>
+      <p>Limited seats available for the upcoming intake. Apply early to secure your place in a world-class university.</p>
+      <div class="mega__promo-img"><img src="assets/img/img02.png" alt="Admissions"></div>
+      <a href="#cta" class="btn-gold" style="margin-top:.5rem">Apply Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">How to Apply</div>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-file-list-3-line"></i></div><div><b>Apply Online</b><span>Start your application</span></div></a>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-file-text-line"></i></div><div><b>Requirements</b><span>Entry criteria &amp; documents</span></div></a>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-calendar-line"></i></div><div><b>Key Dates</b><span>Deadlines &amp; interviews</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Support &amp; Finance</div>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-money-dollar-circle-line"></i></div><div><b>Tuition &amp; Fees</b><span>Transparent fee structure</span></div></a>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-award-line"></i></div><div><b>Scholarships</b><span>Merit &amp; need-based awards</span></div></a>
+      <a href="#cta" class="mega__row"><div class="mega__row-ico"><i class="ri-customer-service-2-line"></i></div><div><b>Contact Admissions</b><span>Speak with an advisor</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Research -->
+<div class="mega mega--research" id="mega-research" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">Research Excellence</div>
+      <h3>Driving Innovation. Advancing Global Health.</h3>
+      <p>Explore our world-class research ecosystem designed to solve real-world challenges.</p>
+      <div class="mega__promo-img"><img src="assets/img/h1.jpg" alt="Research"></div>
+      <div class="mega__stats">
+        <div class="mega__stat"><b>250+</b><span>Active Projects</span></div>
+        <div class="mega__stat"><b>180+</b><span>Research Partners</span></div>
+        <div class="mega__stat"><b>95%</b><span>Global Impact</span></div>
+      </div>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Discover</div>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-microscope-line"></i></div><div><b>Research Centers</b><span>Innovation &amp; discovery labs</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-article-line"></i></div><div><b>Publications</b><span>Journals &amp; faculty papers</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-funds-line"></i></div><div><b>Grants &amp; Funding</b><span>Internal &amp; external grants</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-earth-line"></i></div><div><b>Research Impact</b><span>Our impact on global health</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Innovate</div>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-lightbulb-line"></i></div><div><b>Innovation Hub</b><span>Entrepreneurship in health</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-exchange-2-line"></i></div><div><b>Technology Transfer</b><span>Bringing ideas to life</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-rocket-line"></i></div><div><b>Startups &amp; Incubation</b><span>Support for health startups</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-shield-check-line"></i></div><div><b>Intellectual Property</b><span>Patents &amp; commercialisation</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Collaborate</div>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-global-line"></i></div><div><b>Global Partnerships</b><span>Worldwide collaborations</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-building-2-line"></i></div><div><b>Industry Collaboration</b><span>Partner with industry</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-heart-pulse-line"></i></div><div><b>Clinical Research</b><span>Advancing patient care</span></div></a>
+      <a href="#" class="mega__row"><div class="mega__row-ico"><i class="ri-team-line"></i></div><div><b>Research Services</b><span>Support for researchers</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Student Life -->
+<div class="mega mega--campus" id="mega-campus" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">Campus Life</div>
+      <h3>Life at AKU</h3>
+      <p>A vibrant, inclusive campus built to inspire collaboration, creativity, and personal growth.</p>
+      <div class="mega__promo-img"><img src="assets/img/h3.jpg" alt="Campus Life"></div>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Experience</div>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-building-line"></i></div><div><b>Campus Facilities</b><span>State-of-the-art environment</span></div></a>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-group-line"></i></div><div><b>Student Clubs</b><span>Grow beyond the classroom</span></div></a>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-hospital-line"></i></div><div><b>Clinical Training</b><span>Real-world patient care</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Services</div>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-book-open-line"></i></div><div><b>Library</b><span>Digital &amp; physical resources</span></div></a>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-heart-line"></i></div><div><b>Sports &amp; Wellness</b><span>Mind and body balance</span></div></a>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-home-line"></i></div><div><b>Accommodation</b><span>On-campus housing</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<div class="mega mega--about" id="mega-about" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo">
+      <div class="gold-label">About AKU</div>
+      <h3>Accredited Excellence</h3>
+      <p>Built on integrity, innovation, and a clear commitment to the future of healthcare in the UAE.</p>
+      <div class="mega__promo-img"><img src="assets/img/h2.jpg" alt="About AKU"></div>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">The University</div>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-landmark-line"></i></div><div><b>Our Vision</b><span>Mission, values &amp; strategy</span></div></a>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-file-text-line"></i></div><div><b>History &amp; Milestones</b><span>Founding story</span></div></a>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-user-star-line"></i></div><div><b>Leadership</b><span>Board &amp; management</span></div></a>
+    </div>
+    <div class="mega__col">
+      <div class="mega__col-head">Connect</div>
+      <a href="#footer" class="mega__row"><div class="mega__row-ico"><i class="ri-map-pin-line"></i></div><div><b>Find Us</b><span>Location &amp; directions</span></div></a>
+      <a href="#footer" class="mega__row"><div class="mega__row-ico"><i class="ri-mail-line"></i></div><div><b>Contact</b><span>General enquiries</span></div></a>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-handshake-line"></i></div><div><b>Partnerships</b><span>Industry alliances</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Founder -->
+<div class="mega mega--founder" id="mega-founder" aria-hidden="true">
+  <div class="mega__inner wrap">
+    <div class="mega__promo" style="display:grid;grid-template-columns:180px 1fr;gap:2rem;align-items:center;border-right:1px solid var(--w10);padding-right:2.5rem">
+      <img src="assets/img/chairman-memari.png" alt="H.E. Mohammed Shemel Al Memari" style="width:100%;border-radius:.875rem;filter:drop-shadow(0 16px 32px rgba(0,0,0,.5))">
+      <div>
+        <div class="gold-label" style="margin-bottom:.875rem">Founder's Word</div>
+        <h3 style="margin-bottom:.75rem">H.E. Mohammed Shemel Al Memari</h3>
+        <p>Guiding Ain Al Khaleej University with dignity, ambition, and a clear commitment to healthcare education excellence.</p>
+        <a href="#chairman" class="btn-gold" style="margin-top:1.25rem">Read Full Message <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+    <div class="mega__col" style="padding-left:2.5rem;border-right:none">
+      <div class="mega__col-head">Quick Links</div>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-quote-text"></i></div><div><b>Founder's Word (EN)</b><span>English message</span></div></a>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-translate-2"></i></div><div><b>كلمة المؤسس</b><span>Arabic message</span></div></a>
+      <a href="#chairman" class="mega__row"><div class="mega__row-ico"><i class="ri-eye-line"></i></div><div><b>University Vision</b><span>Purpose &amp; direction</span></div></a>
+      <a href="#news" class="mega__row"><div class="mega__row-ico"><i class="ri-award-line"></i></div><div><b>Our Legacy</b><span>From vision to impact</span></div></a>
+    </div>
+  </div>
+</div>
+
+<!-- Scrim -->
+<div class="nav__scrim" id="navScrim"></div>
+
+<!-- Mobile Drawer -->
+<!-- ══════════════ EDGE TRIGGER TAB ══════════════ -->
+<button class="edge-tab" id="edgeTab" aria-label="Open navigation menu" title="Open menu">
+  <div class="edge-tab-dot"></div>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- ══════════════ PREMIUM SLIDING PANEL ══════════════ -->
+<div class="sp-scrim" id="spScrim"></div>
+
+<div class="side-panel" id="sidePanel" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+
+  <!-- Top: Logo + Close -->
+  <div class="sp-top">
+    <div class="sp-logo">
+      <img src="assets/img/logo-full-new.png" alt="AKU" onerror="this.style.display='none'">
+      <div class="sp-logo-text">
+        <span class="sp-logo-ar">جامعة عين لخليج للعلوم الصحية</span>
+        <span class="sp-logo-en">AIN AL KHALEEJ UNIVERSITY<br>OF HEALTH SCIENCES</span>
+      </div>
+    </div>
+    <button class="sp-close" id="spClose" aria-label="Close menu">
+      <i class="ri-close-line"></i>
+    </button>
+  </div>
+
+  <!-- EN / AR -->
+  <div class="sp-lang">
+    <button class="sp-lang-btn active" data-splang="en">EN</button>
+    <button class="sp-lang-btn" data-splang="ar">AR</button>
+  </div>
+
+  <!-- Search -->
+  <div class="sp-search">
+    <i class="ri-search-line"></i>
+    <input type="search" placeholder="Search..." id="spSearch" autocomplete="off">
+  </div>
+
+  <!-- Nav items -->
+  <nav class="sp-nav" id="spNav">
+
+    <div class="sp-item" data-key="study">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-graduation-cap-line"></i></div>
+        <span class="sp-item-label">Study</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#programs" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">MBBS — Medicine &amp; Surgery</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#programs" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">BDS — Dental Surgery</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#programs" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">BSc Nursing</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#programs" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">MSc Physiotherapy</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#programs" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">BPharmacy</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#programs" class="sp-sub-viewall">View All Programs <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="faculties">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-shield-star-line"></i></div>
+        <span class="sp-item-label">Faculties</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#college" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Medicine &amp; Surgery</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#college" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Dental Sciences</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#college" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Pharmacy</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#college" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Nursing</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#college" class="sp-sub-viewall">View All Faculties <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="admissions">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-file-list-3-line"></i></div>
+        <span class="sp-item-label">Admissions</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#cta" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">How to Apply</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#cta" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Entry Requirements</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#cta" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Fees &amp; Scholarships</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#cta" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">International Students</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#cta" class="sp-sub-viewall">Start Application <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="research">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-microscope-line"></i></div>
+        <span class="sp-item-label">Research</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Research Centers</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Publications</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Innovation Hub</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Global Partnerships</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Research Impact</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#" class="sp-sub-viewall">View All Research <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="campus">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-community-line"></i></div>
+        <span class="sp-item-label">Student Life</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#news" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Campus Facilities</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#news" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Student Clubs</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#news" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Sports &amp; Wellness</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#news" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Library &amp; Resources</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#ar-campus" class="sp-sub-viewall">AR Campus Tour <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="about">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-building-4-line"></i></div>
+        <span class="sp-item-label">About AKU</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#chairman" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">About Us</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#chairman" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Leadership</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#news" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">News &amp; Events</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#footer" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Contact Us</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+      </div>
+    </div>
+
+    <div class="sp-item" data-key="founder">
+      <div class="sp-item-head">
+        <div class="sp-item-ico"><i class="ri-user-star-line"></i></div>
+        <span class="sp-item-label">Founder</span>
+        <div class="sp-item-toggle"><i class="ri-add-line"></i></div>
+      </div>
+      <div class="sp-sub">
+        <a href="#chairman" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">Founder's Word</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+        <a href="#chairman" class="sp-sub-row"><div class="sp-sub-dot"></div><span class="sp-sub-text">University Vision</span><i class="ri-arrow-right-s-line sp-sub-arrow"></i></a>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Apply CTA -->
+  <div class="sp-apply">
+    <a href="#cta"><i class="ri-edit-box-line"></i> Apply Now →</a>
+  </div>
+
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero__copy reveal">
+    <div class="hero__label gold-label">Leading Healthcare Innovation</div>
+    <h1>Redefining<br>the Future of<br><span class="gold">Health Sciences</span></h1>
+    <p class="hero__desc">Empowering future healthcare leaders through world-class education, cutting-edge research, and compassionate clinical excellence.</p>
+    <div class="hero__cta">
+      <a href="#programs" class="btn-gold">Explore Programs <i class="ri-arrow-right-line"></i></a>
+      <a href="#ar-campus" class="btn-outline">Learn About AKU <i class="ri-arrow-right-line"></i></a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__avatars">
+        <img src="assets/img/img01.png" alt="">
+        <img src="assets/img/img02.png" alt="">
+        <img src="assets/img/img04.png" alt="">
+      </div>
+      <p class="hero__stat-text">Join a global community<br>of changemakers</p>
+      <div class="hero__divider"></div>
+      <div class="hero__stat-text"><strong>25K+</strong>Students &amp; Alumni</div>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <img src="assets/img/university.png" alt="Ain Al Khaleej University of Health Sciences" class="active" style="object-fit:cover;object-position:center;">
+  </div>
+</section>
+
+<!-- ══════════════ HIGHLIGHTS STRIP ══════════════ -->
+<div class="strip">
+  <div class="strip__grid">
+    <div class="strip__item"><div class="strip__icon">⭐</div><div class="strip__title">Accredited Excellence</div><div class="strip__desc">Globally recognized accreditations &amp; rankings</div></div>
+    <div class="strip__item"><div class="strip__icon">🔬</div><div class="strip__title">Advanced Facilities</div><div class="strip__desc">State-of-the-art labs and simulation centers</div></div>
+    <div class="strip__item"><div class="strip__icon">🎓</div><div class="strip__title">Expert Faculty</div><div class="strip__desc">Leaders in research and clinical practice</div></div>
+    <div class="strip__item"><div class="strip__icon">🌐</div><div class="strip__title">Global Partnerships</div><div class="strip__desc">Collaborations with top institutions worldwide</div></div>
+    <div class="strip__item"><div class="strip__icon">❤</div><div class="strip__title">Student-Centered</div><div class="strip__desc">Support, wellness &amp; career guidance</div></div>
+  </div>
+</div>
+
+<!-- ══════════════ COLLEGE ══════════════ -->
+<section class="college" id="college">
+  <div class="wrap">
+    <div class="college__grid reveal">
+      <div class="college__media">
+        <img src="assets/img/img03.png" alt="College of Medicine & Surgery">
+        <button class="college__play"><i class="ri-play-fill"></i></button>
+      </div>
+      <div class="college__copy">
+        <div class="gold-label" style="margin-bottom:.875rem">College of</div>
+        <h2>Medicine &amp; Surgery</h2>
+        <p>Where knowledge meets compassion. Our programs prepare leaders to heal with skill, empathy, and innovation.</p>
+        <div class="college__stats">
+          <div class="c-stat"><b>30+</b><span>Programs</span></div>
+          <div class="c-stat"><b>12K+</b><span>Clinical Training Hours Annually</span></div>
+          <div class="c-stat"><b>8</b><span>Research Centers</span></div>
+          <div class="c-stat"><b>95%</b><span>Graduate Employability</span></div>
+          <div class="c-stat"><b>120+</b><span>Global Teaching Hospitals</span></div>
+        </div>
+        <a href="#programs" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--gold);font-size:.875rem;font-weight:600;margin-top:1.75rem">Explore the College <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROGRAMS ══════════════ -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="programs__head reveal">
+      <div>
+        <h2 class="programs__title">Programs <em>That Shape Tomorrow</em></h2>
+      </div>
+      <a href="#" class="programs__view-all">View All Programs <i class="ri-arrow-right-line"></i></a>
+    </div>
+  </div>
+  <div class="programs__shell reveal">
+    <button class="prog-arrow prev" id="progPrev">‹</button>
+    <div class="programs__track" id="progTrack">
+
+      <article class="prog-card">
+        <img src="assets/img/card1.png" class="prog-card__img" alt="MBBS">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon.png" alt=""></div>
+          <div class="prog-card__name">MBBS</div>
+          <div class="prog-card__full">Bachelor of Medicine &amp; Surgery</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card2.png" class="prog-card__img" alt="BDS">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon1.png" alt=""></div>
+          <div class="prog-card__name">BDS</div>
+          <div class="prog-card__full">Bachelor of Dental Surgery</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card3.png" class="prog-card__img" alt="BSc Nursing">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon2.png" alt=""></div>
+          <div class="prog-card__name">BSc Nursing</div>
+          <div class="prog-card__full">Bachelor of Science in Nursing</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card4.png" class="prog-card__img" alt="MSc Physiotherapy">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon3.png" alt=""></div>
+          <div class="prog-card__name">MSc Physiotherapy</div>
+          <div class="prog-card__full">Master of Science in Physiotherapy</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card.png" class="prog-card__img" alt="BPharmacy">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon4.png" alt=""></div>
+          <div class="prog-card__name">BPharmacy</div>
+          <div class="prog-card__full">Bachelor of Pharmacy</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card5.png" class="prog-card__img" alt="BSc Radiology">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon5.png" alt=""></div>
+          <div class="prog-card__name">BSc Radiology</div>
+          <div class="prog-card__full">Bachelor of Science in Radiology</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card2.png" class="prog-card__img" alt="Medical Lab Sciences">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon6.png" alt=""></div>
+          <div class="prog-card__name">Medical Lab</div>
+          <div class="prog-card__full">Bachelor of Medical Laboratory Sciences</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+      <article class="prog-card">
+        <img src="assets/img/card4.png" class="prog-card__img" alt="Audiology">
+        <div class="prog-card__overlay"></div>
+        <div class="prog-card__body">
+          <div class="prog-card__icon"><img src="assets/img/icon7.png" alt=""></div>
+          <div class="prog-card__name">Audiology</div>
+          <div class="prog-card__full">Audiology and Speech Therapy</div>
+          <div class="prog-card__learn"><i class="ri-arrow-right-line"></i> Learn More</div>
+        </div>
+      </article>
+
+    </div>
+    <button class="prog-arrow next" id="progNext">›</button>
+    <div class="prog-dots" style="margin-top:1.5rem">
+      <button class="prog-dot active"></button>
+      <button class="prog-dot"></button>
+      <button class="prog-dot"></button>
+      <button class="prog-dot"></button>
+      <button class="prog-dot"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ AR CAMPUS ══════════════ -->
+<section class="ar-campus" id="ar-campus">
+  <div class="wrap">
+    <div class="ar-campus__grid reveal">
+      <div class="ar-campus__copy">
+        <div class="gold-label" style="margin-bottom:1rem">Explore Our Campus in</div>
+        <h2><em>Augmented Reality</em></h2>
+        <p>Step inside Ain Al Khaleej University virtually. Discover our iconic spaces, cutting-edge labs, and vibrant student life like never before.</p>
+        <a href="#" class="btn-gold">Launch AR Experience <i class="ri-arrow-right-line"></i></a>
+        <div class="ar-stores">
+          <div class="ar-store"><i class="ri-apple-fill"></i><div><small>Download on the</small><b>App Store</b></div></div>
+          <div class="ar-store"><i class="ri-google-play-fill"></i><div><small>Get it on</small><b>Google Play</b></div></div>
+        </div>
+      </div>
+      <div class="ar-campus__device">
+        <div class="ar-campus__frame">
+          <img src="assets/img/ar-campus-tablet.png" alt="Explore AKU in Augmented Reality">
+        </div>
+        <div class="ar-pin ar-pin--1"><i class="ri-map-pin-fill"></i> Simulation Center</div>
+        <div class="ar-pin ar-pin--2"><i class="ri-map-pin-fill"></i> Innovation Hub</div>
+        <div class="ar-pin ar-pin--3"><i class="ri-map-pin-fill"></i> Student Plaza</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOUNDER ══════════════ -->
+<section class="founder" id="chairman">
+  <div class="wrap">
+    <div class="founder__grid reveal">
+
+      <!-- Left: Photo with badge -->
+      <div class="founder__img-wrap">
+        <img src="assets/img/chairman-memari.png" alt="H.E. Mohammed Shemel Al Memari" class="founder__img">
+        <div class="founder__badge">Founder's<br>Word</div>
+      </div>
+
+      <!-- Center: Message -->
+      <div class="founder__center">
+        <div class="founder__label gold-label">Founder's Word</div>
+        <h2 class="founder__title">A Vision for a<br><em>Healthier Tomorrow</em></h2>
+        <p class="founder__desc">
+          At Ain Al Khaleej University of Health Sciences, we believe that education, innovation, and compassion are the foundations of a healthier world. Together, we empower minds to heal lives and communities to thrive.
+        </p>
+        <div class="founder__name">H.E. MOHAMED SHEMEL AL MEMARI</div>
+        <div class="founder__role">Founder</div>
+      </div>
+
+      <!-- Right: Arabic quote -->
+      <div class="founder__quote-block">
+        <div class="founder__quote-icon">"</div>
+        <p class="founder__quote-ar">
+          نؤمن بأن التعليم والابتكار والرحمة هي أسس عالم أكثر صحة، مما يمكّن العقول لشفاء الأرواح وتمكين المجتمعات من الازدهار.
+        </p>
+        <div class="founder__quote-name">سعادة محمد شمل المعمري</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ GALLERY ══════════════ -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="gallery__grid reveal">
+      <div class="g-card"><img src="assets/img/img01.png" alt=""><div>Globally Recognized Education</div></div>
+      <div class="g-card"><img src="assets/img/img02.png" alt=""><div>Hands-on Learning &amp; Innovation</div></div>
+      <div class="g-card"><img src="assets/img/img03.png" alt=""><div>Experienced Faculty &amp; Mentorship</div></div>
+      <div class="g-card"><img src="assets/img/img04.png" alt=""><div>Modern Facilities &amp; Technology</div></div>
+      <div class="g-card"><img src="assets/img/h4.jpg" alt=""><div>Vibrant Campus Life</div></div>
+      <div class="g-card"><img src="assets/img/h5.jpg" alt=""><div>Strong Alumni Network</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ NEWS & EVENTS ══════════════ -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="news__grid reveal">
+      <div class="panel">
+        <div class="panel__head">
+          <h2>News &amp; Highlights</h2>
+          <a href="#">View All News <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="news-cards">
+          <article class="n-card">
+            <img src="assets/img/h2.jpg" alt="">
+            <div class="n-card__body">
+              <div class="n-cat">Research · May 12</div>
+              <h3>AKU Researchers Publish Groundbreaking Study</h3>
+              <div class="date">May 8, 2025</div>
+            </div>
+          </article>
+          <article class="n-card">
+            <img src="assets/img/h3.jpg" alt="">
+            <div class="n-card__body">
+              <div class="n-cat">Campus · May 05</div>
+              <h3>New Simulation Lab Now Open</h3>
+              <div class="date">May 5, 2025</div>
+            </div>
+          </article>
+          <article class="n-card">
+            <img src="assets/img/h4.jpg" alt="">
+            <div class="n-card__body">
+              <div class="n-cat">Partnership · Apr 30</div>
+              <h3>Student Exchange Partnership Announced</h3>
+              <div class="date">Apr 30, 2025</div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel__head">
+          <h2>Upcoming Events</h2>
+          <a href="#">View All <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="ev-list">
+          <div class="ev-item">
+            <div class="ev-date"><b>20</b><span>MAY</span></div>
+            <div class="ev-info"><small>Main Auditorium</small><h3>International Nursing Conference 2025</h3></div>
+          </div>
+          <div class="ev-item">
+            <div class="ev-date"><b>15</b><span>JUN</span></div>
+            <div class="ev-info"><small>Innovation Center</small><h3>Healthcare Innovation Summit</h3></div>
+          </div>
+          <div class="ev-item">
+            <div class="ev-date"><b>28</b><span>JUN</span></div>
+            <div class="ev-info"><small>AKU Campus</small><h3>Open Day &amp; Campus Tour</h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA BANNER ══════════════ -->
+<div class="cta-banner" id="cta">
+  <div class="cta-banner__inner">
+    <div class="gold-label" style="justify-content:center;margin:0 auto 1rem">Admissions Now Open</div>
+    <h2>Begin Your Healthcare Future</h2>
+    <p>Join a university experience designed to inspire excellence, advance innovation, and transform lives.</p>
+    <a href="#" class="btn-gold" style="margin:0 auto">Apply Now <i class="ri-arrow-right-line"></i></a>
+  </div>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">
+          <img src="assets/img/logo-white.png" alt="AKU" onerror="this.src='assets/img/logo-full-new.png'">
+        </div>
+        <p class="footer__tagline">Shaping compassionate healthcare leaders through excellence in education, research, and innovation.</p>
+        <div class="footer__socials">
+          <div class="footer__social"><i class="ri-facebook-fill"></i></div>
+          <div class="footer__social"><i class="ri-twitter-x-fill"></i></div>
+          <div class="footer__social"><i class="ri-instagram-line"></i></div>
+          <div class="footer__social"><i class="ri-linkedin-fill"></i></div>
+          <div class="footer__social"><i class="ri-youtube-fill"></i></div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Quick Links</h3>
+        <div class="footer__links">
+          <a href="#programs">Programs</a>
+          <a href="#cta">Admissions</a>
+          <a href="#college">Faculties</a>
+          <a href="#">Research</a>
+          <a href="#news">Campus Life</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Academics</h3>
+        <div class="footer__links">
+          <a>Undergraduate</a>
+          <a>Postgraduate</a>
+          <a>Continuing Education</a>
+          <a>Library</a>
+          <a>Student Support</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>About AKU</h3>
+        <div class="footer__links">
+          <a href="#chairman">About Us</a>
+          <a href="#chairman">Leadership</a>
+          <a>Accreditations</a>
+          <a>Careers</a>
+          <a href="#footer">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h3>Contact Us</h3>
+        <div class="footer__contact">
+          <div class="footer__contact-item"><i class="ri-phone-line"></i>+971 50 123 4567</div>
+          <div class="footer__contact-item"><i class="ri-mail-line"></i>info@aku.ac.ae</div>
+          <div class="footer__contact-item"><i class="ri-map-pin-line"></i>P.O. Box 1022, Ajman,<br>Ain Al Khaleej University of Health Sciences, UAE</div>
+        </div>
+        <div style="margin-top:.75rem">
+          <h3 style="margin-bottom:.75rem">Take the Next Step</h3>
+          <p style="font-size:.78rem;color:var(--w50);margin-bottom:.875rem;line-height:1.55">Applications are open for future-ready healthcare programs.</p>
+          <a href="#cta" class="btn-gold" style="font-size:.8rem;padding:.55rem 1.25rem">Apply Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Ain Al Khaleej University of Health Sciences. All Rights Reserved.</span>
+      <div class="footer__bottom-links">
+        <a>Privacy Policy</a>
+        <a>Terms of Use</a>
+        <a>Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ SMART SEARCH ══════════════ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search AKU">
+  <div class="search-box">
+    <div class="search-head">
+      <div class="search-head-left">
+        <i class="ri-search-line" style="font-size:1.2rem;color:var(--gold)"></i>
+        <h3>Search AKU</h3>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <span class="search-kbd">ESC</span>
+        <button id="searchClose" aria-label="Close search"><i class="ri-close-line"></i></button>
+      </div>
+    </div>
+    <div class="search-input-row">
+      <i class="ri-search-line"></i>
+      <input id="searchInput" placeholder="Search programs, admissions, research, campus..." autocomplete="off" spellcheck="false">
+      <button id="searchClear" class="search-clear" style="display:none" aria-label="Clear"><i class="ri-close-circle-fill"></i></button>
+    </div>
+    <div class="search-cats" id="searchCats">
+      <button class="search-cat active" data-cat="all">All</button>
+      <button class="search-cat" data-cat="programs">Programs</button>
+      <button class="search-cat" data-cat="admissions">Admissions</button>
+      <button class="search-cat" data-cat="research">Research</button>
+      <button class="search-cat" data-cat="campus">Campus Life</button>
+      <button class="search-cat" data-cat="about">About AKU</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-footer">
+      <span><kbd>↑↓</kbd> navigate &nbsp; <kbd>↵</kbd> open &nbsp; <kbd>ESC</kbd> close</span>
+      <span style="color:var(--gold);font-weight:600">AKU Smart Search</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CHATBOT ══════════════ -->
+<button class="chat-fab" id="chatFab" aria-label="Open AKU Assistant">
+  <i class="ri-message-3-fill chat-fab-icon"></i>
+  <i class="ri-close-line chat-fab-close" style="display:none"></i>
+  <span class="chat-fab-badge" id="chatBadge">1</span>
+</button>
+
+<div class="chat-window" id="chatWindow" aria-hidden="true">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar"><i class="ri-robot-2-fill"></i></div>
+      <div>
+        <div class="chat-name">AKU Assistant</div>
+        <div class="chat-status"><span class="chat-dot"></span>Online — Ask me anything</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:.5rem">
+      <button class="chat-hdr-btn" id="chatClear" title="Clear conversation"><i class="ri-delete-bin-line"></i></button>
+      <button class="chat-hdr-btn" id="chatClose" aria-label="Close chat"><i class="ri-close-line"></i></button>
+    </div>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="chat-msg bot">
+      <div class="chat-bubble">
+        👋 Hello! I'm the <strong>AKU Assistant</strong>. I can help you with information about programs, admissions, campus life, research, and more.<br><br>What would you like to know?
+      </div>
+    </div>
+    <div class="chat-chips" id="chatChips">
+      <button class="chip" data-q="What programs does AKU offer?">📚 Programs</button>
+      <button class="chip" data-q="How do I apply to AKU?">✍️ How to Apply</button>
+      <button class="chip" data-q="Tell me about tuition fees and scholarships">💰 Fees & Scholarships</button>
+      <button class="chip" data-q="What research centers does AKU have?">🔬 Research</button>
+      <button class="chip" data-q="What is campus life like at AKU?">🎓 Campus Life</button>
+      <button class="chip" data-q="How can I contact AKU?">📞 Contact</button>
+    </div>
+  </div>
+
+  <div class="chat-input-area">
+    <div class="chat-input-row">
+      <textarea id="chatInput" placeholder="Ask about AKU..." rows="1" aria-label="Type your message"></textarea>
+      <button class="chat-send" id="chatSend" aria-label="Send message" disabled>
+        <i class="ri-send-plane-fill"></i>
+      </button>
+    </div>
+    <div class="chat-powered">Powered by Claude AI · Ain Al Khaleej University</div>
+  </div>
+</div>
+
+<style>
+/* ═══ SMART SEARCH ═══ */
+.search-head{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--ink-08)}
+.search-head-left{display:flex;align-items:center;gap:.625rem}
+.search-head-left h3{font-family:var(--display);font-size:1.3rem;color:var(--navy)}
+.search-kbd{font-size:.68rem;font-weight:700;color:var(--ink-50);background:var(--bg-2);border:1px solid var(--ink-15);border-radius:.3rem;padding:.2rem .4rem;font-family:monospace}
+.search-head button{width:32px;height:32px;border:1px solid var(--ink-15);border-radius:50%;color:var(--navy);font-size:.9rem;display:grid;place-items:center;transition:.2s}
+.search-head button:hover{background:var(--bg-2)}
+.search-input-row{display:flex;gap:.75rem;align-items:center;padding:.875rem 1.25rem;border-bottom:1px solid var(--ink-08);background:var(--bg)}
+.search-input-row > i{font-size:1.15rem;color:var(--ink-30);flex-shrink:0}
+.search-input-row input{flex:1;background:none;border:none;outline:none;font-size:1rem;color:var(--navy);font-family:var(--body);font-weight:500}
+.search-input-row input::placeholder{color:var(--ink-30)}
+.search-clear{color:var(--ink-30);font-size:1.1rem;transition:.2s;display:grid;place-items:center}
+.search-clear:hover{color:var(--ink-70)}
+.search-cats{display:flex;gap:.5rem;padding:.75rem 1.25rem;border-bottom:1px solid var(--ink-08);overflow-x:auto;scrollbar-width:none;flex-wrap:nowrap}
+.search-cats::-webkit-scrollbar{display:none}
+.search-cat{flex-shrink:0;padding:.35rem .875rem;border-radius:2rem;font-size:.75rem;font-weight:600;border:1px solid var(--ink-15);color:var(--ink-70);background:#fff;transition:.2s;cursor:pointer}
+.search-cat:hover{border-color:var(--gold);color:var(--gold)}
+.search-cat.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.search-results{padding:.625rem .875rem 0;max-height:360px;overflow-y:auto;scrollbar-width:thin}
+.search-group-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-30);padding:.5rem .5rem .25rem;margin-top:.25rem}
+.s-result{display:flex;gap:.875rem;align-items:center;padding:.75rem .875rem;border-radius:.625rem;border:1px solid transparent;transition:.18s;cursor:pointer;text-decoration:none;color:var(--navy)}
+.s-result:hover,.s-result.focused{background:var(--bg-2);border-color:var(--ink-08)}
+.s-result.focused{border-color:var(--gold-a30)}
+.s-ico{width:38px;height:38px;border-radius:.5rem;background:var(--bg-2);border:1px solid var(--ink-08);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;color:var(--navy);transition:.18s}
+.s-result:hover .s-ico,.s-result.focused .s-ico{background:var(--navy);color:#fff;border-color:var(--navy)}
+.s-result b{display:block;font-size:.875rem;font-weight:700;color:var(--navy);line-height:1.25}
+.s-result small{font-size:.75rem;color:var(--ink-50);line-height:1.3}
+.s-tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(184,137,47,.1);border-radius:2rem;padding:.1rem .5rem;margin-left:.4rem;vertical-align:middle}
+.search-empty{padding:2.5rem;text-align:center;color:var(--ink-30)}
+.search-empty i{font-size:2.5rem;display:block;margin-bottom:.75rem;opacity:.4}
+.search-empty p{font-size:.875rem;font-weight:500}
+.search-footer{display:flex;align-items:center;justify-content:space-between;padding:.625rem 1.25rem;border-top:1px solid var(--ink-08);font-size:.7rem;color:var(--ink-30);background:var(--bg-2)}
+.search-footer kbd{display:inline-block;padding:.1rem .35rem;border:1px solid var(--ink-15);border-radius:.25rem;font-size:.65rem;background:#fff;font-family:monospace}
+
+/* ═══ CHATBOT ═══ */
+.chat-fab{
+  position:fixed;bottom:2rem;right:2rem;z-index:9000;
+  width:58px;height:58px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--navy),#1a3a6e);
+  color:#fff;font-size:1.4rem;cursor:pointer;
+  box-shadow:0 8px 32px rgba(10,22,40,.28);
+  display:grid;place-items:center;
+  transition:transform .3s,box-shadow .3s;
+}
+.chat-fab:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 14px 40px rgba(10,22,40,.36)}
+.chat-fab-icon,.chat-fab-close{position:absolute;transition:opacity .25s,transform .25s}
+.chat-fab-close{opacity:0;transform:rotate(-90deg)}
+.chat-fab.open .chat-fab-icon{opacity:0;transform:rotate(90deg)}
+.chat-fab.open .chat-fab-close{opacity:1;transform:rotate(0);display:block!important}
+.chat-fab-badge{
+  position:absolute;top:-4px;right:-4px;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--gold);color:var(--navy);
+  font-size:.65rem;font-weight:800;display:grid;place-items:center;
+  border:2px solid #fff;
+  transition:transform .3s,opacity .3s;
+}
+.chat-fab-badge.hidden{transform:scale(0);opacity:0}
+
+.chat-window{
+  position:fixed;bottom:6rem;right:2rem;z-index:8999;
+  width:min(400px,calc(100vw - 2rem));
+  max-height:min(600px,calc(100svh - 9rem));
+  display:flex;flex-direction:column;
+  background:#fff;border-radius:1.25rem;
+  border:1px solid var(--ink-08);
+  box-shadow:0 24px 80px rgba(10,22,40,.18);
+  opacity:0;visibility:hidden;
+  transform:translateY(16px) scale(.97);
+  transform-origin:bottom right;
+  transition:opacity .3s,visibility .3s,transform .3s;
+  overflow:hidden;
+}
+.chat-window.open{opacity:1;visibility:visible;transform:none}
+
+.chat-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.125rem;
+  background:linear-gradient(135deg,var(--navy),#1a3a6e);
+  flex-shrink:0;
+}
+.chat-header-info{display:flex;align-items:center;gap:.75rem}
+.chat-avatar{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.15);display:grid;place-items:center;
+  font-size:1.15rem;color:#fff;flex-shrink:0;
+}
+.chat-name{font-size:.9rem;font-weight:700;color:#fff}
+.chat-status{display:flex;align-items:center;gap:.35rem;font-size:.7rem;color:rgba(255,255,255,.7);margin-top:.1rem}
+.chat-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.chat-hdr-btn{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;font-size:.9rem;transition:.2s;border:none;cursor:pointer}
+.chat-hdr-btn:hover{background:rgba(255,255,255,.22)}
+
+.chat-body{flex:1;overflow-y:auto;padding:.875rem;display:flex;flex-direction:column;gap:.625rem;scroll-behavior:smooth;scrollbar-width:thin}
+.chat-msg{display:flex;flex-direction:column;max-width:88%}
+.chat-msg.bot{align-self:flex-start}
+.chat-msg.user{align-self:flex-end}
+.chat-bubble{
+  padding:.75rem 1rem;border-radius:1rem;font-size:.85rem;line-height:1.6;
+  word-break:break-word;
+}
+.chat-msg.bot .chat-bubble{
+  background:var(--bg-2);color:var(--navy);border:1px solid var(--ink-08);
+  border-bottom-left-radius:.25rem;
+}
+.chat-msg.user .chat-bubble{
+  background:linear-gradient(135deg,var(--navy),#1a3a6e);color:#fff;
+  border-bottom-right-radius:.25rem;
+}
+.chat-time{font-size:.65rem;color:var(--ink-30);margin-top:.25rem;padding:0 .25rem}
+.chat-msg.user .chat-time{text-align:right}
+.chat-typing{display:flex;align-items:center;gap:.35rem;padding:.625rem .875rem;background:var(--bg-2);border:1px solid var(--ink-08);border-radius:1rem;border-bottom-left-radius:.25rem;width:fit-content}
+.chat-typing span{width:8px;height:8px;border-radius:50%;background:var(--ink-30);animation:typing 1.2s infinite}
+.chat-typing span:nth-child(2){animation-delay:.18s}
+.chat-typing span:nth-child(3){animation-delay:.36s}
+@keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+
+.chat-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.25rem}
+.chip{
+  padding:.4rem .875rem;border-radius:2rem;font-size:.75rem;font-weight:600;
+  border:1px solid var(--ink-15);background:#fff;color:var(--navy);
+  cursor:pointer;transition:.2s;white-space:nowrap;
+}
+.chip:hover{border-color:var(--gold);color:var(--gold);background:rgba(184,137,47,.06)}
+
+.chat-input-area{border-top:1px solid var(--ink-08);padding:.75rem;flex-shrink:0;background:#fff}
+.chat-input-row{display:flex;gap:.625rem;align-items:flex-end}
+#chatInput{
+  flex:1;border:1px solid var(--ink-15);border-radius:.875rem;
+  padding:.625rem .875rem;font-size:.875rem;font-family:var(--body);
+  color:var(--navy);resize:none;outline:none;
+  max-height:120px;overflow-y:auto;line-height:1.5;
+  transition:border-color .2s;
+}
+#chatInput:focus{border-color:var(--navy)}
+.chat-send{
+  width:40px;height:40px;flex-shrink:0;border-radius:50%;
+  background:var(--navy);color:#fff;font-size:1rem;
+  display:grid;place-items:center;border:none;cursor:pointer;
+  transition:background .2s,transform .2s;
+}
+.chat-send:hover:not(:disabled){background:#1a3a6e;transform:scale(1.06)}
+.chat-send:disabled{background:var(--ink-15);cursor:not-allowed}
+.chat-powered{font-size:.63rem;color:var(--ink-30);text-align:center;margin-top:.5rem}
+
+@media(max-width:480px){
+  .chat-window{right:1rem;bottom:5rem;width:calc(100vw - 2rem)}
+  .chat-fab{right:1rem;bottom:1rem}
+}
+</style>
+
+<script>
+/* ══════════════════════════════════════════════════
+   SECURITY — disable devtools shortcuts & right-click
+══════════════════════════════════════════════════ */
+document.addEventListener('contextmenu',function(e){e.preventDefault();return false});
+document.addEventListener('keydown',function(e){
+  if(e.key==='F12'||e.keyCode===123){e.preventDefault();return false}
+  if(e.ctrlKey&&e.shiftKey&&['I','J','C','K'].includes(e.key.toUpperCase())){e.preventDefault();return false}
+  if(e.ctrlKey&&e.key.toUpperCase()==='U'){e.preventDefault();return false}
+  if(e.ctrlKey&&e.key.toUpperCase()==='S'){e.preventDefault();return false}
+});
+// Devtools detection via size difference
+(function(){
+  var threshold=160;
+  setInterval(function(){
+    if(window.outerWidth-window.innerWidth>threshold||window.outerHeight-window.innerHeight>threshold){
+      document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:1.2rem;color:#0a1628">Please close developer tools to continue.</div>';
+    }
+  },1000);
+})();
+
+/* ══════════════════════════════════════════════════
+   REVEAL ON SCROLL
+══════════════════════════════════════════════════ */
+var revealIO=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){revealIO.observe(el)});
+
+/* ══════════════════════════════════════════════════
+   MEGA MENU
+══════════════════════════════════════════════════ */
+(function(){
+  var nav=document.getElementById('nav');
+  var triggers=[].slice.call(document.querySelectorAll('.nav__trigger'));
+  var megas=[].slice.call(document.querySelectorAll('.mega'));
+  var scrim=document.getElementById('navScrim');
+  var cur=null,closeT=null,openT=null;
+  var mouse={x:0,y:0};
+  document.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY},{passive:true});
+  function navBot(){return Math.round(nav.getBoundingClientRect().bottom)}
+  function setTop(m){m.style.top=navBot()+'px'}
+  function inBox(el,pad){if(!el)return false;var r=el.getBoundingClientRect();pad=pad||0;return mouse.x>=r.left-pad&&mouse.x<=r.right+pad&&mouse.y>=r.top-pad&&mouse.y<=r.bottom+pad}
+  function safe(){if(!cur)return false;if(inBox(cur.btn,16)||inBox(cur.panel,12))return true;var pb=cur.panel.getBoundingClientRect(),nb=nav.getBoundingClientRect();return mouse.x>=pb.left-14&&mouse.x<=pb.right+14&&mouse.y>=nb.bottom-4&&mouse.y<=pb.top+28}
+  function closeAll(){clearTimeout(closeT);clearTimeout(openT);megas.forEach(function(m){m.classList.remove('open');m.setAttribute('aria-hidden','true')});triggers.forEach(function(t){t.setAttribute('aria-expanded','false')});scrim.classList.remove('on');cur=null}
+  function softClose(){clearTimeout(openT);clearTimeout(closeT);closeT=setTimeout(function(){if(safe()){softClose();return}closeAll()},460)}
+  function openDrop(btn){
+    clearTimeout(closeT);clearTimeout(openT);
+    var id=btn.dataset.mega;var panel=document.getElementById(id);if(!panel)return;
+    megas.forEach(function(m){if(m!==panel){m.classList.remove('open');m.setAttribute('aria-hidden','true')}});
+    triggers.forEach(function(t){t.setAttribute('aria-expanded','false')});
+    setTop(panel);panel.classList.add('open');panel.removeAttribute('aria-hidden');
+    btn.setAttribute('aria-expanded','true');scrim.classList.add('on');cur={btn:btn,panel:panel};
+  }
+  function sched(btn){clearTimeout(closeT);clearTimeout(openT);if(cur){openDrop(btn);return}openT=setTimeout(function(){openDrop(btn)},55)}
+  triggers.forEach(function(btn){
+    btn.addEventListener('mouseenter',function(){sched(btn)});
+    btn.addEventListener('focus',function(){sched(btn)});
+    btn.addEventListener('mouseleave',softClose);
+    btn.addEventListener('click',function(e){e.preventDefault();cur&&cur.btn===btn?closeAll():openDrop(btn)});
+  });
+  megas.forEach(function(p){
+    p.addEventListener('mouseenter',function(){clearTimeout(closeT)});
+    p.addEventListener('mousemove',function(){clearTimeout(closeT)});
+    p.addEventListener('mouseleave',softClose);
+  });
+  document.addEventListener('click',function(e){if(!cur)return;if(e.target.closest('.nav__trigger')||e.target.closest('.mega'))return;closeAll()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+  scrim.addEventListener('click',closeAll);
+  var raf;function repos(){if(!cur)return;cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){setTop(cur.panel)})}
+  window.addEventListener('scroll',repos,{passive:true});window.addEventListener('resize',repos,{passive:true});
+})();
+
+/* ══════════════════════════════════════════════════
+   MOBILE DRAWER — wired to new premium side panel
+══════════════════════════════════════════════════ */
+(function(){
+  var burger=document.getElementById('drawerOpen');
+  if(burger)burger.addEventListener('click',function(){openSidePanel()});
+})();
+
+/* ══════════════════════════════════════════════════
+   PREMIUM SIDE PANEL
+══════════════════════════════════════════════════ */
+(function(){
+  var panel   = document.getElementById('sidePanel');
+  var scrim   = document.getElementById('spScrim');
+  var tab     = document.getElementById('edgeTab');
+  var closeBtn= document.getElementById('spClose');
+  var spSearch= document.getElementById('spSearch');
+  var isOpen  = false;
+
+  window.openSidePanel = function(){
+    isOpen = true;
+    panel.classList.remove('peeking');
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    scrim.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    document.querySelectorAll('.sp-item').forEach(function(el,i){
+      el.style.opacity='0';el.style.transform='translateX(30px)';
+      setTimeout(function(){el.style.transition='opacity .35s ease, transform .35s ease';el.style.opacity='1';el.style.transform='none'},80+i*55);
+    });
+  };
+  window.closeSidePanel = function(){
+    isOpen = false;
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    scrim.classList.remove('on');
+    document.body.style.overflow = '';
+  };
+
+  // Edge tab click opens
+  tab.addEventListener('click', openSidePanel);
+  tab.addEventListener('mouseenter',function(){
+    if(!isOpen){panel.classList.add('peeking')}
+  });
+  tab.addEventListener('mouseleave',function(){
+    if(!isOpen){panel.classList.remove('peeking')}
+  });
+
+  closeBtn.addEventListener('click', closeSidePanel);
+  scrim.addEventListener('click', closeSidePanel);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen)closeSidePanel()});
+
+  // Accordion items
+  document.querySelectorAll('.sp-item-head').forEach(function(head){
+    head.addEventListener('click',function(){
+      var item=head.closest('.sp-item');
+      var wasOpen=item.classList.contains('expanded');
+      document.querySelectorAll('.sp-item').forEach(function(it){it.classList.remove('expanded')});
+      if(!wasOpen)item.classList.add('expanded');
+    });
+  });
+
+  // In-panel search filter
+  spSearch.addEventListener('input',function(){
+    var q=this.value.toLowerCase().trim();
+    document.querySelectorAll('.sp-item').forEach(function(item){
+      if(!q){item.style.display='';item.classList.remove('expanded');return}
+      var label=item.querySelector('.sp-item-label').textContent.toLowerCase();
+      var subTexts=[].slice.call(item.querySelectorAll('.sp-sub-text')).map(function(el){return el.textContent.toLowerCase()}).join(' ');
+      var match=label.includes(q)||subTexts.includes(q);
+      item.style.display=match?'':'none';
+      if(match)item.classList.add('expanded');
+    });
+  });
+
+  // Lang toggle
+  document.querySelectorAll('.sp-lang-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.sp-lang-btn').forEach(function(b){b.classList.remove('active')});
+      btn.classList.add('active');
+    });
+  });
+
+  // Close on link click
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){setTimeout(closeSidePanel,180)});
+  });
+})();
+
+/* Nav lang */
+document.querySelectorAll('.nav__lang-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){document.querySelectorAll('.nav__lang-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active')});
+});
+
+/* ══════════════════════════════════════════════════
+   PROGRAMS CAROUSEL
+══════════════════════════════════════════════════ */
+(function(){
+  var track=document.getElementById('progTrack');
+  var dots=[].slice.call(document.querySelectorAll('.prog-dot'));
+  document.getElementById('progNext').addEventListener('click',function(){track.scrollBy({left:340,behavior:'smooth'})});
+  document.getElementById('progPrev').addEventListener('click',function(){track.scrollBy({left:-340,behavior:'smooth'})});
+  track.addEventListener('scroll',function(){
+    var p=track.scrollLeft/(track.scrollWidth-track.clientWidth);
+    var idx=Math.min(dots.length-1,Math.round(p*(dots.length-1)));
+    dots.forEach(function(d,i){d.classList.toggle('active',i===idx)});
+  });
+  dots.forEach(function(d,i){d.addEventListener('click',function(){track.scrollTo({left:(track.scrollWidth-track.clientWidth)*(i/(dots.length-1)),behavior:'smooth'})})});
+})();
+
+/* ══════════════════════════════════════════════════
+   SMART SEARCH
+══════════════════════════════════════════════════ */
+(function(){
+  var overlay=document.getElementById('searchOverlay');
+  var input=document.getElementById('searchInput');
+  var results=document.getElementById('searchResults');
+  var clearBtn=document.getElementById('searchClear');
+  var cats=document.querySelectorAll('.search-cat');
+  var activeCat='all';
+  var focusIdx=-1;
+
+  var data=[
+    // Programs
+    {cat:'programs',ico:'ri-heart-pulse-line',title:'MBBS — Medicine & Surgery',desc:'Bachelor of Medicine & Surgery · 6-year clinical pathway',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-tooth-line',title:'BDS — Dental Surgery',desc:'Bachelor of Dental Surgery · Precision oral healthcare',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-nurse-line',title:'BSc Nursing',desc:'Bachelor of Science in Nursing · Patient-centred care',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-run-line',title:'MSc Physiotherapy',desc:'Master of Science in Physiotherapy · Rehabilitation science',href:'#programs',tag:'Postgraduate'},
+    {cat:'programs',ico:'ri-capsule-line',title:'BPharmacy',desc:'Bachelor of Pharmacy · Pharmaceutical sciences',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-scan-line',title:'BSc Radiology',desc:'Bachelor of Science in Radiology · Diagnostic imaging',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-microscope-line',title:'Medical Lab Sciences',desc:'Bachelor of Medical Laboratory Sciences',href:'#programs',tag:'Undergraduate'},
+    {cat:'programs',ico:'ri-ear-line',title:'Audiology & Speech Therapy',desc:'Communication sciences and hearing healthcare',href:'#programs',tag:'Undergraduate'},
+    // Admissions
+    {cat:'admissions',ico:'ri-file-list-3-line',title:'How to Apply',desc:'Step-by-step application guide for all programs',href:'#cta',tag:'Admissions'},
+    {cat:'admissions',ico:'ri-calendar-line',title:'Key Dates & Deadlines',desc:'Application windows, exam dates and interview schedule',href:'#cta',tag:'Admissions'},
+    {cat:'admissions',ico:'ri-money-dollar-circle-line',title:'Tuition Fees & Scholarships',desc:'Fee structure, merit awards and financial aid',href:'#cta',tag:'Admissions'},
+    {cat:'admissions',ico:'ri-global-line',title:'International Students',desc:'Visa guidance, equivalency and international admissions',href:'#cta',tag:'Admissions'},
+    {cat:'admissions',ico:'ri-award-line',title:'Entry Requirements',desc:'Academic qualifications and language requirements',href:'#cta',tag:'Admissions'},
+    // Research
+    {cat:'research',ico:'ri-microscope-line',title:'Research Centers',desc:'Innovation & discovery labs across health sciences',href:'#',tag:'Research'},
+    {cat:'research',ico:'ri-article-line',title:'Publications & Journals',desc:'Faculty research papers and academic publications',href:'#',tag:'Research'},
+    {cat:'research',ico:'ri-lightbulb-line',title:'Innovation Hub',desc:'Entrepreneurship in health — startups & incubation',href:'#',tag:'Research'},
+    {cat:'research',ico:'ri-handshake-line',title:'Global Partnerships',desc:'International research collaborations and exchanges',href:'#',tag:'Research'},
+    // Campus
+    {cat:'campus',ico:'ri-building-line',title:'Campus Facilities',desc:'State-of-the-art labs, simulation centres and spaces',href:'#news',tag:'Campus Life'},
+    {cat:'campus',ico:'ri-group-line',title:'Student Clubs & Activities',desc:'Sports, arts, volunteer and professional societies',href:'#news',tag:'Campus Life'},
+    {cat:'campus',ico:'ri-book-open-line',title:'Library & Resources',desc:'Digital and physical library resources for students',href:'#news',tag:'Campus Life'},
+    {cat:'campus',ico:'ri-heart-line',title:'Sports & Wellness',desc:'Gym, fitness courts and mental health services',href:'#news',tag:'Campus Life'},
+    {cat:'campus',ico:'ri-scan-2-line',title:'AR Campus Tour',desc:'Experience AKU in Augmented Reality before you arrive',href:'#ar-campus',tag:'Interactive'},
+    // About
+    {cat:'about',ico:'ri-landmark-line',title:'About AKU',desc:'Mission, vision and values of the university',href:'#chairman',tag:'About'},
+    {cat:'about',ico:'ri-user-star-line',title:"Founder's Word",desc:'Message from H.E. Mohammed Shemel Al Memari',href:'#chairman',tag:'About'},
+    {cat:'about',ico:'ri-map-pin-line',title:'Location & Directions',desc:'Ajman campus — P.O. Box 1022, UAE',href:'#footer',tag:'Contact'},
+    {cat:'about',ico:'ri-phone-line',title:'Contact Us',desc:'+971 50 123 4567 · info@aku.ac.ae',href:'#footer',tag:'Contact'},
+  ];
+
+  function highlight(str,q){
+    if(!q)return str;
+    return str.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark style="background:rgba(184,137,47,.18);color:var(--navy);border-radius:2px">$1</mark>');
+  }
+
+  function render(q){
+    var query=(q||'').toLowerCase().trim();
+    var filtered=data.filter(function(x){
+      var catOk=activeCat==='all'||x.cat===activeCat;
+      var txtOk=!query||(x.title+' '+x.desc+' '+x.tag).toLowerCase().includes(query);
+      return catOk&&txtOk;
+    });
+    focusIdx=-1;
+    if(!filtered.length){
+      results.innerHTML='<div class="search-empty"><i class="ri-search-line"></i><p>No results for "<strong>'+q+'</strong>"</p></div>';
+      return;
+    }
+    // Group by category
+    var groups={};
+    filtered.forEach(function(x){if(!groups[x.cat])groups[x.cat]={};if(!groups[x.cat].items)groups[x.cat].items=[];groups[x.cat].items.push(x)});
+    var catLabels={programs:'Programs',admissions:'Admissions',research:'Research',campus:'Campus Life',about:'About & Contact'};
+    var html='';
+    Object.keys(groups).forEach(function(cat){
+      if(activeCat==='all')html+='<div class="search-group-label">'+catLabels[cat]+'</div>';
+      groups[cat].items.forEach(function(x){
+        html+='<a class="s-result" href="'+x.href+'"><div class="s-ico"><i class="'+x.ico+'"></i></div><div><b>'+highlight(x.title,query)+'<span class="s-tag">'+x.tag+'</span></b><small>'+highlight(x.desc,query)+'</small></div></a>';
+      });
+    });
+    results.innerHTML=html;
+    results.querySelectorAll('.s-result').forEach(function(a){a.addEventListener('click',closeSearch)});
+  }
+
+  function getFocusable(){return[].slice.call(results.querySelectorAll('.s-result'))}
+
+  function openSearch(){
+    overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+    render('');setTimeout(function(){input.focus()},60);
+  }
+  function closeSearch(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');input.value='';clearBtn.style.display='none';render('')}
+
+  // Keyboard navigation
+  results.addEventListener('keydown',function(e){
+    var items=getFocusable();
+    if(e.key==='ArrowDown'){e.preventDefault();focusIdx=Math.min(focusIdx+1,items.length-1);items[focusIdx]&&items[focusIdx].classList.add('focused')}
+    if(e.key==='ArrowUp'){e.preventDefault();focusIdx=Math.max(focusIdx-1,-1);if(focusIdx===-1)input.focus()}
+    items.forEach(function(it,i){it.classList.toggle('focused',i===focusIdx)});
+  });
+  input.addEventListener('keydown',function(e){
+    var items=getFocusable();
+    if(e.key==='ArrowDown'&&items.length){e.preventDefault();focusIdx=0;items[0].classList.add('focused');items[0].focus()}
+  });
+
+  document.getElementById('searchOpen').addEventListener('click',openSearch);
+  document.getElementById('searchClose').addEventListener('click',closeSearch);
+  overlay.addEventListener('click',function(e){if(e.target===overlay)closeSearch()});
+  input.addEventListener('input',function(){
+    var v=this.value;
+    clearBtn.style.display=v?'grid':'none';
+    render(v);
+  });
+  clearBtn.addEventListener('click',function(){input.value='';clearBtn.style.display='none';render('');input.focus()});
+  cats.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      cats.forEach(function(b){b.classList.remove('active')});
+      btn.classList.add('active');activeCat=btn.dataset.cat;render(input.value);
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&overlay.classList.contains('open')){closeSearch();return}
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch()}
+  });
+  render('');
+})();
+
+/* ══════════════════════════════════════════════════
+   CHATBOT — Claude AI powered
+══════════════════════════════════════════════════ */
+(function(){
+  var fab=document.getElementById('chatFab');
+  var win=document.getElementById('chatWindow');
+  var body=document.getElementById('chatBody');
+  var input=document.getElementById('chatInput');
+  var sendBtn=document.getElementById('chatSend');
+  var badge=document.getElementById('chatBadge');
+  var chips=document.getElementById('chatChips');
+  var isOpen=false;
+  var isTyping=false;
+  var history=[];// {role:'user'|'assistant', content:string}
+
+  var SYSTEM=`You are the official AI assistant for Ain Al Khaleej University of Health Sciences (AKU), located in Ajman, UAE. You are helpful, professional, and friendly.
+
+Key facts about AKU:
+- Location: Ajman, UAE (P.O. Box 1022)
+- Contact: +971 50 123 4567, info@aku.ac.ae
+- Founded to provide world-class healthcare education in the UAE
+- Founder: H.E. Mohammed Shemel Al Memari
+
+Programs offered:
+- MBBS (Bachelor of Medicine & Surgery) — 6 years
+- BDS (Bachelor of Dental Surgery)
+- BSc Nursing
+- MSc Physiotherapy
+- BPharmacy
+- BSc Radiology
+- Medical Laboratory Sciences
+- Audiology & Speech Therapy
+
+Key facts:
+- 30+ programs, 12,000+ clinical training hours annually
+- 8 research centers, 95% graduate employability
+- 120+ global teaching hospitals
+- State-of-the-art simulation labs
+- AR campus tour available on iOS & Android
+- Accredited and globally recognized
+
+Admissions:
+- Applications open year-round
+- Requirements vary by program (contact admissions for specifics)
+- Scholarships and financial aid available
+- International students welcome
+
+Answer questions accurately and helpfully. If you don't know something specific, say so honestly and direct them to contact the university. Keep responses concise and conversational. Use bullet points when listing multiple items. Always be encouraging about prospective students considering AKU.`;
+
+  function getTime(){var d=new Date();return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0')}
+
+  function addMsg(role,content,skipTime){
+    var msg=document.createElement('div');
+    msg.className='chat-msg '+role;
+    var bubble=document.createElement('div');
+    bubble.className='chat-bubble';
+    bubble.innerHTML=content.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/\n/g,'<br>').replace(/•/g,'&bull;');
+    msg.appendChild(bubble);
+    if(!skipTime){var time=document.createElement('div');time.className='chat-time';time.textContent=getTime();msg.appendChild(time)}
+    body.appendChild(msg);
+    body.scrollTop=body.scrollHeight;
+    return bubble;
+  }
+
+  function showTyping(){
+    var t=document.createElement('div');
+    t.className='chat-msg bot';t.id='chatTyping';
+    var b=document.createElement('div');b.className='chat-typing';
+    b.innerHTML='<span></span><span></span><span></span>';
+    t.appendChild(b);body.appendChild(t);body.scrollTop=body.scrollHeight;
+  }
+  function hideTyping(){var t=document.getElementById('chatTyping');if(t)t.remove()}
+
+  function removeChips(){if(chips&&chips.parentNode){chips.parentNode.removeChild(chips)}}
+
+  async function send(text){
+    if(isTyping||!text.trim())return;
+    removeChips();
+    isTyping=true;sendBtn.disabled=true;
+    addMsg('user',text);
+    input.value='';input.style.height='auto';
+    history.push({role:'user',content:text});
+    showTyping();
+    try{
+      var res=await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          model:'claude-sonnet-4-20250514',
+          max_tokens:600,
+          system:SYSTEM,
+          messages:history.slice(-10)// keep last 10 for context
+        })
+      });
+      var data=await res.json();
+      hideTyping();
+      var reply=data.content&&data.content[0]&&data.content[0].text||'I apologize, I had trouble responding. Please try again or contact AKU directly at info@aku.ac.ae';
+      history.push({role:'assistant',content:reply});
+      addMsg('bot',reply);
+    }catch(err){
+      hideTyping();
+      addMsg('bot','I\'m having connectivity issues right now. Please contact AKU directly:\n\n📞 +971 50 123 4567\n📧 info@aku.ac.ae');
+    }
+    isTyping=false;sendBtn.disabled=!input.value.trim();
+  }
+
+  function toggleChat(){
+    isOpen=!isOpen;
+    fab.classList.toggle('open',isOpen);
+    win.classList.toggle('open',isOpen);
+    win.setAttribute('aria-hidden',String(!isOpen));
+    if(isOpen){badge.classList.add('hidden');setTimeout(function(){input.focus()},300)}
+  }
+
+  fab.addEventListener('click',toggleChat);
+  document.getElementById('chatClose').addEventListener('click',function(){isOpen=true;toggleChat()});
+
+  document.getElementById('chatClear').addEventListener('click',function(){
+    body.innerHTML='';history=[];
+    addMsg('bot','Conversation cleared. How can I help you today? 😊',true);
+  });
+
+  sendBtn.addEventListener('click',function(){send(input.value.trim())});
+
+  input.addEventListener('input',function(){
+    sendBtn.disabled=!this.value.trim();
+    this.style.height='auto';
+    this.style.height=Math.min(this.scrollHeight,120)+'px';
+  });
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send(this.value.trim())}
+  });
+
+  // Quick chip buttons
+  document.querySelectorAll('.chip').forEach(function(btn){
+    btn.addEventListener('click',function(){send(btn.dataset.q)});
+  });
+
+  // Keyboard shortcut to open
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&isOpen){isOpen=true;toggleChat()}
+  });
+})();
+</script>
+</body>
+</html>
