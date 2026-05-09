@@ -969,6 +969,214 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
 .s-result b{display:block;color:var(--navy);font-size:.875rem;font-weight:600}
 .s-result small{color:var(--ink-50);font-size:.75rem}
 
+
+
+/* =========================================================
+   MONTY HEADER IMAGE FIX V4 — NO VISIBLE LINE BETWEEN TEXT & IMAGE
+   - removes hard separator / curve line
+   - removes clip edge seam
+   - blends image behind text with one soft fade only
+   - keeps the same HTML structure and functionality
+========================================================= */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+:root{--nav-h:82px;}
+
+.nav{
+  position:sticky !important;
+  top:0 !important;
+  width:100% !important;
+  height:var(--nav-h) !important;
+  min-height:var(--nav-h) !important;
+  border-radius:0 !important;
+  margin:0 !important;
+  background:rgba(255,255,255,.94) !important;
+  backdrop-filter:blur(22px) saturate(145%) !important;
+  box-shadow:0 10px 34px rgba(10,22,40,.08) !important;
+  z-index:1000 !important;
+}
+
+.hero{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  min-height:calc(100svh - var(--nav-h)) !important;
+  height:calc(100svh - var(--nav-h)) !important;
+  display:grid !important;
+  grid-template-columns:minmax(430px,39vw) minmax(0,1fr) !important;
+  gap:0 !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+
+.hero::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  left:calc(39% - 118px) !important;
+  top:-20% !important;
+  width:220px !important;
+  height:142% !important;
+  border-radius:0 0 86% 0 !important;
+  transform:rotate(5deg) !important;
+  z-index:7 !important;
+  opacity:1 !important;
+  pointer-events:none !important;
+  background:
+    linear-gradient(180deg,
+      rgba(42,129,255,0) 0%,
+      rgba(42,129,255,.24) 8%,
+      rgba(89,183,255,.92) 18%,
+      rgba(31,111,255,1) 48%,
+      rgba(16,78,201,1) 68%,
+      rgba(89,183,255,.88) 86%,
+      rgba(42,129,255,0) 100%) right center / 9px 100% no-repeat,
+    linear-gradient(180deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,.78) 28%,
+      rgba(255,255,255,.18) 52%,
+      rgba(255,255,255,0) 100%) calc(100% - 2px) center / 2px 100% no-repeat !important;
+  filter:
+    drop-shadow(0 0 8px rgba(58,145,255,.55))
+    drop-shadow(0 0 22px rgba(34,118,255,.28))
+    drop-shadow(0 0 42px rgba(23,94,224,.16)) !important;
+}
+
+.hero__copy{
+  position:relative !important;
+  z-index:8 !important;
+  height:100% !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  padding:clamp(34px,5vh,74px) clamp(24px,4vw,76px) !important;
+  background:#fff !important;
+}
+
+/* The text panel softly dissolves into the image — no hard vertical line */
+.hero__copy::after{
+  content:"" !important;
+  position:absolute !important;
+  top:0 !important;
+  right:-170px !important;
+  width:240px !important;
+  height:100% !important;
+  z-index:-1 !important;
+  pointer-events:none !important;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,.92) 28%,
+    rgba(255,255,255,.58) 58%,
+    rgba(255,255,255,0) 100%
+  ) !important;
+}
+
+.hero h1{
+  font-size:clamp(44px,5.4vw,88px) !important;
+  line-height:.96 !important;
+  max-width:650px !important;
+}
+
+.hero__desc{
+  max-width:540px !important;
+  line-height:1.68 !important;
+}
+
+.hero__visual{
+  position:relative !important;
+  z-index:1 !important;
+  height:100% !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+  background:#fff !important;
+  border-radius:0 !important;
+}
+
+.hero__image-frame{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:hidden !important;
+  clip-path:none !important;
+  border:0 !important;
+  outline:0 !important;
+}
+
+.hero__image-frame img,
+.hero__visual > img{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:right center !important;
+  opacity:1 !important;
+  transform:scale(1.01) !important;
+  filter:saturate(1.06) contrast(1.03) !important;
+}
+
+/* Single soft overlay only. Starts before the image edge and fades fast. */
+.hero__visual::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:3 !important;
+  pointer-events:none !important;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.70) 0%,
+    rgba(255,255,255,.38) 9%,
+    rgba(255,255,255,.14) 20%,
+    rgba(255,255,255,0) 38%
+  ) !important;
+}
+
+.hero__image-frame::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* Remove the visible separator line completely */
+.hero__gold-curve{
+  display:none !important;
+}
+
+.strip{margin-top:0 !important;}
+
+@media(max-width:1100px){
+  .hero{
+    height:auto !important;
+    min-height:auto !important;
+    grid-template-columns:1fr !important;
+  }
+  .hero__copy{
+    min-height:calc(100svh - var(--nav-h)) !important;
+    padding:3.2rem 1.6rem 2.8rem !important;
+  }
+  .hero__copy::after{display:none !important;}
+  .hero::after{display:none !important;}
+  .hero__visual{min-height:52vw !important;}
+  .hero__visual::before{
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0) 55%) !important;
+  }
+}
+
+@media(max-width:640px){
+  :root{--nav-h:70px;}
+  .hero__copy{
+    min-height:auto !important;
+    padding:2.6rem 1.4rem 2.2rem !important;
+  }
+  .hero__visual{min-height:330px !important;}
+  .hero h1{font-size:clamp(38px,11vw,56px) !important;}
+}
+
 </style>
 </head>
 <body>
@@ -1382,7 +1590,10 @@ button{font-family:var(--body);cursor:pointer;border:none;background:none}
   </div>
 
   <div class="hero__visual">
-    <img src="assets/img/university.png" alt="Ain Al Khaleej University of Health Sciences" class="active" style="object-fit:cover;object-position:center;">
+    <div class="hero__image-frame">
+      <img src="assets/img/university.png" alt="Ain Al Khaleej University of Health Sciences" class="active">
+    </div>
+    <div class="hero__gold-curve" aria-hidden="true"></div>
   </div>
 </section>
 
